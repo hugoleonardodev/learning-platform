@@ -1,0 +1,39 @@
+section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+
+    div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-height: 360px;
+    }
+
+    p {
+        font-weight: bold;
+    }
+}
+
+.fetched-data {
+    h2 {
+        text-align: center;
+    }
+
+    h5 {
+        padding: 16px;
+    }
+
+    a {
+        padding: 2px;
+    }
+
+    p {
+        font-weight: lighter;
+        padding: 16px;
+    }
+}

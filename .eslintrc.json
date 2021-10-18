@@ -1,0 +1,96 @@
+{
+    "root": true,
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "browser": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-perf/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:prettier/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": ["import", "react-hooks", "prettier", "testing-library"],
+    "globals": {
+        "__DEVELOPMENT__": "readonly",
+        "__PRODUCTION__": "readonly",
+        "__API_URL__": "readonly",
+        "__APP_NAME__": "readonly"
+    },
+    "overrides": [
+        {
+            "files": ["**/*.ts", "**/*.tsx"],
+            "parser": "@typescript-eslint/parser",
+            "extends": ["plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+            "plugins": ["@typescript-eslint"],
+            "rules": {
+                "@typescript-eslint/explicit-module-boundary-types": ["error"]
+            }
+        },
+        {
+            "files": ["webpack.*.js", "babel*", "postcss*", "tailwind.config.js", "handlers.ts", "browser.ts"],
+            "env": {
+                "node": true
+            },
+            "rules": {
+                "unicorn/prefer-module": 0,
+                "no-console": 0,
+                "complexity": ["error", 10],
+                "@typescript-eslint/no-var-requires": 0
+            }
+        },
+        {
+            "files": ["**/src/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+            "env": {
+                "node": true
+            },
+            "extends": ["plugin:testing-library/react"]
+        }
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "semi": ["error", "never"],
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "no-extra-semi": "off",
+        "@typescript-eslint/no-extra-semi": ["error"],
+        "function-call-argument-newline": ["error", "consistent"],
+        "react/prop-types": 0,
+        "react-perf/jsx-no-new-function-as-prop": 0,
+        "unicorn/consistent-function-scoping": 0,
+        "unicorn/filename-case": 0,
+        "unicorn/no-nested-ternary": 0,
+        "unicorn/prefer-spread": 0,
+        "unicorn/no-null": 0,
+        "unicorn/numeric-separators-style": 0,
+        "no-console": ["error"],
+        "complexity": ["error", 10],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-magic-numbers": [
+            "error",
+            {
+                "ignoreArrayIndexes": true,
+                "ignoreDefaultValues": true,
+                "ignore": [-1, 0, 1]
+            }
+        ]
+    }
+}
