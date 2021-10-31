@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const TerserJSPlugin = require('terser-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 // const CompressionPlugin = require('compression-webpack-plugin')
 
 const sourceFolder = path.resolve(__dirname, 'src')
@@ -115,7 +115,7 @@ const config = {
         new webpack.DefinePlugin({
             __API_URL__: JSON.stringify(process.env.API_URL),
         }),
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
     ],
     performance: {
         hints: 'warning',
