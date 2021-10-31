@@ -9,6 +9,9 @@ export const HomeFooterContainer = styled.footer`
     width: 100%;
     align-items: center;
     justify-content: space-around;
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
 `
 
 export const HomeFooterTitle = styled.h5`

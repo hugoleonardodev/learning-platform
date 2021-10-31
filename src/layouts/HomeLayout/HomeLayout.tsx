@@ -15,19 +15,14 @@ import {
     HomeLogo,
     HomeLogoContainer,
     HomeLogoTitle,
-    // HomeNav,
-    // HomeNavLink,
-    // HomeNavLinkIcon,
     HomeRow,
 } from './styles'
 
 import StudyingOnline from 'common/assets/studying_online.jpg'
 import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'
+
 import HomeFooter from 'components/molecules/HomeFooter'
 import ForgotPassword from 'components/organisms/FormLogin/ForgotPassword'
-// import StudyingBackground1 from 'common/assets/studying_background2.jpg'
-// import EmailIcon from 'common/assets/email.svg'
-// import LinkedinIcon from 'common/assets/linkedin-logo.svg'
 
 const HomeLayout: React.FC = () => {
     const [forgotPassword, setForgotPassword] = React.useState(false)

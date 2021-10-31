@@ -31,7 +31,7 @@ export const InputRounded = styled(Input)`
 `
 export const HomeCardImage = styled(CardImg)`
     filter: brightness(0.5);
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 768px) {
         min-height: 356px;
     }
 `
