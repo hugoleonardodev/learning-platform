@@ -74,7 +74,7 @@ const FormLogin: React.FC<FormLoginProperties> = ({ setForgotPassword }) => {
         <FormLoginContainer onSubmit={handleSubmit(onSubmit)}>
             <FormLoginGroup>
                 <FormLoginTitle>Login</FormLoginTitle>
-                <FormLoginEmailInput type="email" className={emailClasses} {...register('email')} />
+                <FormLoginEmailInput type="email" className={emailClasses} tabIndex={0} {...register('email')} />
                 <FormLoginLabel htmlFor="email">E-mail</FormLoginLabel>
                 <FormLoginPasswordInput type="password" className={passwordClasses} {...register('password')} />
                 <FormLoginLabel htmlFor="password">Senha</FormLoginLabel>

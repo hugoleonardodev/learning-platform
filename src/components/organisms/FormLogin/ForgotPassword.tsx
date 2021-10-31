@@ -33,7 +33,7 @@ const ForgotPassword: React.FC<FormLoginProperties> = ({ setForgotPassword }) =>
     const emailFieldHasError = !!errors.email
     const emailFieldIsDirty = dirtyFields.email
 
-    const submitButtonIsDisabled = !emailFieldHasError
+    const submitButtonIsDisabled = emailFieldHasError
 
     const dispatch = useDispatch()
 
@@ -51,7 +51,7 @@ const ForgotPassword: React.FC<FormLoginProperties> = ({ setForgotPassword }) =>
         <FormLoginContainer onSubmit={handleSubmit(onSubmit)}>
             <FormLoginGroup>
                 <FormLoginTitle>Esqueceu a senha</FormLoginTitle>
-                <FormLoginEmailInput type="email" className={emailClasses} {...register('email')} />
+                <FormLoginEmailInput type="email" className={emailClasses} tabIndex={0} {...register('email')} />
                 <FormLoginLabel htmlFor="email">E-mail</FormLoginLabel>
                 {emailFieldHasError ? <FormLoginFeedback>E-mail inválido</FormLoginFeedback> : <div />}
             </FormLoginGroup>
@@ -59,7 +59,7 @@ const ForgotPassword: React.FC<FormLoginProperties> = ({ setForgotPassword }) =>
                 <ForgotPasswordLink onClick={() => setForgotPassword(false)}>
                     Voltar para tela de login
                 </ForgotPasswordLink>
-                <FormLoginButton type="submit" disabled={!submitButtonIsDisabled}>
+                <FormLoginButton type="submit" disabled={submitButtonIsDisabled}>
                     Resetar
                 </FormLoginButton>
             </FormLoginBtnsContainer>

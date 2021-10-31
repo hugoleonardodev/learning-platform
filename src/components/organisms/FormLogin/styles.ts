@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Form, FormGroup, Label, Button, Row, Col, FormFeedback } from 'reactstrap'
-// import { Link } from 'react-router-dom'
 
 export const FormLoginContainer = styled(Form)`
     padding: 16px 32px 0 32px;
@@ -50,13 +49,6 @@ export const FormLoginEmailInput = styled.input`
         padding: 0 8px 0 8px;
         color: ${properties => properties.theme.colors.primary.main};
     }
-    /* &:not([value='']) + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
-        font-size: 14px;
-        background: white;
-        padding: 0 8px 0 8px;
-        color: ${properties => properties.theme.colors.primary.main};
-    } */
 `
 
 export const FormLoginPasswordInput = styled.input`
@@ -76,20 +68,6 @@ export const FormLoginPasswordInput = styled.input`
         padding: 0 8px 0 8px;
         color: ${properties => properties.theme.colors.primary.main};
     }
-    /* &::after + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
-        font-size: 14px;
-        background: white;
-        padding: 0 8px 0 8px;
-        color: ${properties => properties.theme.colors.primary.main};
-    } */
-    /* &:not([value='']) + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
-        font-size: 14px;
-        background: white;
-        padding: 0 8px 0 8px;
-        color: ${properties => properties.theme.colors.primary.main};
-    } */
     &:active + ${FormLoginLabel} {
         transform: translate(16px, -56px);
         font-size: 14px;
@@ -99,7 +77,9 @@ export const FormLoginPasswordInput = styled.input`
     }
 `
 
-export const FormLoginFeedback = styled(FormFeedback)``
+export const FormLoginFeedback = styled(FormFeedback)`
+    margin-left: 14px;
+`
 
 export const FormLoginBtnsContainer = styled.div`
     display: flex;
