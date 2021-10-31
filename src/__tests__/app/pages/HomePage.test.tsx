@@ -5,14 +5,13 @@ import { screen } from '@testing-library/react'
 // import { render } from '../../helpers/TestRenderer'
 // import userEvent from '@testing-library/user-event'
 import { createMemoryHistory } from 'history'
-
-import HomePageNoMDC from './HomePageNoMDC'
+import HomePage from 'pages/HomePage'
 
 describe('HomePageNoMDC.tsx', () => {
     beforeEach(() => {
         const homeRoute = '/'
         const homeHistory = createMemoryHistory({ initialEntries: [homeRoute] })
-        RenderWithRouterAndStore(<HomePageNoMDC />, { path: homeRoute, history: homeHistory })
+        RenderWithRouterAndStore(<HomePage />, { path: homeRoute, history: homeHistory })
     })
 
     it('should renders a link with `React` text', () => {

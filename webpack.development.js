@@ -49,7 +49,6 @@ const config = {
         rules: [
             {
                 test: /\.m?[jt]sx?$/i,
-                // exclude: [/node_modules/, /__tests__/],
                 exclude: [/node_modules/, /__tests__/],
                 use: [
                     {
@@ -63,7 +62,6 @@ const config = {
             {
                 test: /\.tsx?$/,
                 exclude: [/__tests__/],
-                // exclude: /__tests__/,
                 use: [
                     {
                         loader: 'ts-loader',
