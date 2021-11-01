@@ -62,6 +62,29 @@ export const TeacherNavItem = styled(NavItem)`
     align-items: center;
 `
 
+type TeacherNavLinkButtonProperties = {
+    isselected: boolean
+    istoggle?: boolean
+}
+
+export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkButtonProperties>`
+    color: ${properties => properties.theme.colors.text};
+    background: ${properties => properties.theme.colors.background};
+    cursor: pointer;
+    #notifications-icon :nth-child(2) {
+        fill: ${properties =>
+            properties.isselected ? properties.theme.colors.primary.main : properties => properties.theme.colors.text};
+    }
+    &:hover {
+        #notifications-icon :nth-child(2) {
+            fill: ${properties => properties.theme.colors.primary.main};
+        }
+    }
+    @media only screen and (min-width: 767px) {
+        display: ${properties => (properties.istoggle ? 'none' : 'block')};
+    }
+`
+
 type TeacherNavLinkProperties = {
     istoggle?: boolean
 }
@@ -70,57 +93,38 @@ export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     cursor: pointer;
-    svg :nth-child(2) {
+
+    #full-screen-icon :nth-child(2) {
         fill: ${properties => properties.theme.colors.text};
     }
+
     &:hover {
-        svg :nth-child(2) {
+        #full-screen-icon :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};
         }
     }
+
     @media only screen and (min-width: 767px) {
         display: ${properties => (properties.istoggle ? 'none' : 'block')};
     }
 `
 
-type TeacherNavLinkButtonProperties = {
-    isselected: boolean
-} & TeacherNavLinkProperties
-
-export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkButtonProperties>`
+export const TeacherDropdownToggle = styled(DropdownToggle)`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
-    cursor: pointer;
-    svg :nth-child(2) {
-        fill: ${properties =>
-            properties.isselected ? properties.theme.colors.primary.main : properties => properties.theme.colors.text};
+    #my-face-icon :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text};
     }
     &:hover {
-        svg :nth-child(2) {
+        #my-face-icon :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};
         }
-    }
-    @media only screen and (min-width: 767px) {
-        display: ${properties => (properties.istoggle ? 'none' : 'block')};
     }
 `
 
 export const TeacherUncontrolledDropdown = styled(UncontrolledDropdown)`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
-`
-
-export const TeacherDropdownToggle = styled(DropdownToggle)`
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
-    svg :nth-child(2) {
-        fill: ${properties => properties.theme.colors.text};
-    }
-    &:hover {
-        svg :nth-child(2) {
-            fill: ${properties => properties.theme.colors.primary.main};
-        }
-    }
 `
 
 export const TeacherDropdownMenu = styled(DropdownMenu)`

@@ -9,7 +9,7 @@ import {
     HomeFooterNavLink,
     HomeFooterNavLinkIcon,
     HomeFooterTitle,
-} from './styles'
+} from './factory.styles'
 
 import LinkedinIcon from 'common/assets/linkedin-logo.svg'
 import EmailIcon from 'common/assets/email.svg'

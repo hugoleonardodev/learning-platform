@@ -16,7 +16,7 @@ import {
     VertSideNavItem,
     VertSideNavItemSelector,
     VertSideNavLink,
-} from './styles'
+} from './factory.styles'
 
 const TeacherApp: React.FC = ({ children }) => {
     const [sideMenu, toggleSideMenu] = React.useState(false)

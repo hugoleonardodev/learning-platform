@@ -15,7 +15,7 @@ import {
     TeacherNavLink,
     TeacherNavLinkButton,
     TeacherUncontrolledDropdown,
-} from './styles'
+} from './factory.styles'
 
 import { ReactComponent as HamburgerIcon } from 'common/assets/hamburger.svg'
 import { ReactComponent as MenuListIcon } from 'common/assets/menu_list.svg'
@@ -65,17 +65,17 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                                 to={`${fixedUrl(url)}/messages`}
                                 isselected={selectedItem === 'messages'}
                             >
-                                <NotificationsIcon />
+                                <NotificationsIcon id="notifications-icon" />
                             </TeacherNavLinkButton>
                         </TeacherNavItem>
                         <TeacherNavItem>
                             <TeacherNavLink>
-                                <FullScreenIcon />
+                                <FullScreenIcon id="full-screen-icon" />
                             </TeacherNavLink>
                         </TeacherNavItem>
                         <TeacherUncontrolledDropdown inNavbar nav>
                             <TeacherDropdownToggle nav>
-                                <FaceIcon />
+                                <FaceIcon id="my-face-icon" />
                             </TeacherDropdownToggle>
                             <TeacherDropdownMenu end>
                                 <TeacherDropdownItem>Perfil</TeacherDropdownItem>

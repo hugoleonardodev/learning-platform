@@ -16,7 +16,7 @@ import {
     HomeLogoContainer,
     HomeLogoTitle,
     HomeRow,
-} from './styles'
+} from './factory.styles'
 
 import StudyingOnline from 'common/assets/studying_online.jpg'
 import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'

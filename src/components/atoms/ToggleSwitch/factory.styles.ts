@@ -22,7 +22,6 @@ export const ToggleSwitchSlider = styled.span`
     right: 0;
     bottom: 0;
     background-color: ${properties => properties.theme.colors.background};
-    -webkit-transition: 0.4s;
     transition: 0.4s;
     box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
     &::before {
@@ -33,7 +32,6 @@ export const ToggleSwitchSlider = styled.span`
         width: 24px;
         left: 0;
         bottom: 0;
-        -webkit-transition: 0.4s;
         transition: 0.4s;
         box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
     }
@@ -52,9 +50,9 @@ export const ToggleSwitchInput = styled.input`
     &:focus + ${ToggleSwitchSlider} {
         box-shadow: 0 0 1px ${properties => properties.theme.colors.grey.main};
     }
-    &:checked + ${ToggleSwitchSlider}::before {
-        -webkit-transform: translateX(24px);
-        -ms-transform: translateX(24px);
+    &:checked + span::before {
+        transform: translateX(24px);
+        transform: translateX(24px);
         transform: translateX(24px);
     }
 `

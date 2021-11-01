@@ -6,7 +6,7 @@ bundle.css
 
 **/*.js
 **/*.jsx
-**/*.ts
+**/index.ts
 **/*.tsx
 
 node_modules/**/*.css

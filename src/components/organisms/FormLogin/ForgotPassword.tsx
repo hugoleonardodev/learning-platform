@@ -14,7 +14,7 @@ import {
     FormLoginGroup,
     FormLoginLabel,
     FormLoginTitle,
-} from './styles'
+} from './factory.styles'
 
 import loginSchema from 'common/validators/loginSchema'
 

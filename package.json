@@ -23,9 +23,9 @@
   "main": "index.tsx",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "lint": "npx stylelint **/*.scss && eslint --ext .tsx,.ts src",
+    "lint": "npx stylelint **/*.styles.ts && eslint --ext .tsx,.ts src",
     "lint:fix": "eslint --ext .tsx,.ts --fix src",
-    "lint:css": "npx stylelint **/*.scss",
+    "lint:css": "npx stylelint **/*.styles.ts",
     "prepare": "husky install",
     "start": "cross-env NODE_ENV=development webpack s --mode development",
     "test": "jest --runInBand",
