@@ -1,24 +1,23 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { ThemeProvider } from 'styled-components'
+// import { ThemeProvider } from 'styled-components'
 
-import defaultTheme from 'common/themes/defaultTheme'
+// import defaultTheme from 'common/themes/defaultTheme'
+// import darkTheme from 'common/themes/darkTheme'
 
 import store from './store'
 
 import Routes from './Routes'
-
-// import 'bootstrap/dist/css/bootstrap.min.css'
-
-import './App.scss'
+// import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 const App: React.FC = () => {
+    // const switchTheme = useSelector((state: RootStateWithReducers) => state.teachers.switchTheme)
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <Provider store={store}>
-                <Routes />
-            </Provider>
-        </ThemeProvider>
+        <Provider store={store}>
+            {/* <ThemeProvider theme={switchTheme ? darkTheme : defaultTheme}> */}
+            <Routes />
+            {/* </ThemeProvider> */}
+        </Provider>
     )
 }
 

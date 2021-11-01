@@ -11,16 +11,17 @@ export const MainContent = styled.main<MainContentProperties>`
     min-width: ${properties => (properties.sideMenu ? 'calc(80vw)' : 'calc(98vw + 104px)')};
     transform: ${properties => (properties.sideMenu ? 'translateX(0)' : 'translateX(-104px)')};
     transition: transform 0.6s ease;
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
+    color: ${properties => properties.theme.colors.text};
+    background: ${properties => properties.theme.colors.background};
 `
 
 export const VertSideNav = styled.nav`
     height: 100vh;
     max-width: 128px;
     min-width: 104px;
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
+    margin-top: -28px;
+    color: ${properties => properties.theme.colors.text};
+    background: ${properties => properties.theme.colors.background};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
 `
 
@@ -40,6 +41,12 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
     svg :nth-child(2) {
         fill: ${properties =>
             properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
+    }
+    &:hover {
+        color: ${properties => properties.theme.colors.primary.main};
+        svg :nth-child(2) {
+            fill: ${properties => properties.theme.colors.primary.main};
+        }
     }
 `
 

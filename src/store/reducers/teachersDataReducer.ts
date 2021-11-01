@@ -9,6 +9,7 @@ const initialState = {
     isTrainingStarted: false,
     isQuizStarted: false,
     isLoading: false,
+    switchTheme: false,
     teacherLessons: [
         {
             lessonId: 1,
@@ -110,6 +111,11 @@ const teachersDataReducer = (
             return {
                 ...state,
                 isQuizStarted: action.payload,
+            }
+        case TeachersDataActionTypes.TEACHER_SWITCH_THEME:
+            return {
+                ...state,
+                switchTheme: action.payload,
             }
         default:
             return state

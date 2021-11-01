@@ -15,6 +15,11 @@ export interface TeacherStartingQuizAction {
     payload: boolean
 }
 
+export interface TeacherSwtichThemeAction {
+    type: TeachersDataActionTypes.TEACHER_SWITCH_THEME
+    payload: boolean
+}
+
 export const teacherLogin = (teacherEmail: string): TeacherEmailLoginAction => ({
     type: TeachersDataActionTypes.TEACHER_LOGIN,
     payload: teacherEmail,
@@ -30,4 +35,13 @@ export const teacherStartQuiz = (teacherStartQuiz: boolean): TeacherStartingQuiz
     payload: teacherStartQuiz,
 })
 
-export type TeacherActionsCreators = TeacherEmailLoginAction | TeacherStartingCourseAction | TeacherStartingQuizAction
+export const teacherSwitchTheme = (switchTheme: boolean): TeacherSwtichThemeAction => ({
+    type: TeachersDataActionTypes.TEACHER_SWITCH_THEME,
+    payload: switchTheme,
+})
+
+export type TeacherActionsCreators =
+    | TeacherEmailLoginAction
+    | TeacherStartingCourseAction
+    | TeacherStartingQuizAction
+    | TeacherSwtichThemeAction

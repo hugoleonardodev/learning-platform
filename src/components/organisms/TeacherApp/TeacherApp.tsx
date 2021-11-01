@@ -15,13 +15,7 @@ import {
     VertSideNavItemSelector,
     VertSideNavLink,
 } from './styles'
-
-const fixedUrl = (urlToFix: string) => {
-    if (urlToFix.endsWith('/')) {
-        return urlToFix.slice(0, -1)
-    }
-    return urlToFix
-}
+import { fixedUrl } from 'common/functions'
 
 const TeacherApp: React.FC = ({ children }) => {
     const [sideMenu, toggleSideMenu] = React.useState(false)

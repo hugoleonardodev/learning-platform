@@ -20,8 +20,9 @@ import { Link } from 'react-router-dom'
 export const TeacherHeaderContainer = styled.header`
     display: flex;
     justify-content: space-evenly;
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
+    margin-bottom: 28px;
+    /* color: ${properties => properties.theme.colors.text}; */
+    background: ${properties => properties.theme.colors.background};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
 `
 
@@ -83,6 +84,9 @@ export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     cursor: pointer;
+    svg :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text};
+    }
     &:hover {
         svg :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};
@@ -97,6 +101,9 @@ export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkProperties>`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     cursor: pointer;
+    svg :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text};
+    }
     &:hover {
         svg :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};
@@ -115,6 +122,9 @@ export const TeacherUncontrolledDropdown = styled(UncontrolledDropdown)`
 export const TeacherDropdownToggle = styled(DropdownToggle)`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
+    svg :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text};
+    }
     &:hover {
         svg :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};

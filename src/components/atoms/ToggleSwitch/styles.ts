@@ -20,18 +20,18 @@ export const ToggleSwitchSlider = styled.span`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: ${properties => properties.theme.colors.background};
     -webkit-transition: 0.4s;
     transition: 0.4s;
     box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
     &::before {
+        background-color: ${properties => properties.theme.colors.background};
         position: absolute;
         content: '';
         height: 24px;
         width: 24px;
         left: 0;
         bottom: 0;
-        background-color: white;
         -webkit-transition: 0.4s;
         transition: 0.4s;
         box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);

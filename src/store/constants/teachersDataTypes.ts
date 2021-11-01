@@ -29,6 +29,7 @@ export enum TeachersDataActionTypes {
     TEACHER_RE_STARTING_COURSE = 'TEACHER_RE_STARTING_COURSE',
     TEACHER_STARTING_QUIZ = 'TEACHER_STARTING_QUIZ',
     TEACHER_ANSWERING_QUESTION = 'TEACHER_ANSWERING_QUESTION',
+    TEACHER_SWITCH_THEME = 'TEACHER_SWITCH_THEME',
 }
 
 // export interface TeacherEmail {
@@ -65,5 +66,6 @@ export interface TeacherDataState {
     isTrainingStarted: boolean
     isQuizStarted: boolean
     isLoading: boolean
+    switchTheme: boolean
     teacherLessons: TeacherLesson[]
 }
