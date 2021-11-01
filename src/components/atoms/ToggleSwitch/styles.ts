@@ -7,6 +7,7 @@ export const ToggleSwitchLabel = styled.label`
     height: 24px;
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
+    margin-right: 16px;
     input {
         opacity: 0;
         width: 0;

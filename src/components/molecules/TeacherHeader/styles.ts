@@ -53,6 +53,7 @@ export const TeacherNavBrand = styled(Link)`
 export const TeacherNavBrandLogo = styled.img`
     width: 36px;
     border-radius: 100px;
+    margin-right: 16px;
     box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
 `
 

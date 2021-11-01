@@ -42,12 +42,12 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
         fill: ${properties =>
             properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
     }
-    &:hover {
+    /* &:hover {
         color: ${properties => properties.theme.colors.primary.main};
         svg :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};
         }
-    }
+    } */
 `
 
 // type VertSideNavItemSelectorProperties = {
@@ -71,13 +71,14 @@ export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
     display: flex;
     text-decoration: none;
     padding: 12px 0;
-    /* background: ${properties => properties.theme.colors.background}; */
     color: ${properties =>
         properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
     &:hover {
-        color: ${properties => properties.theme.colors.primary.main};
-        svg :nth-child(2) {
-            fill: ${properties => properties.theme.colors.primary.main};
+        .nav-item {
+            color: ${properties => properties.theme.colors.primary.main};
+            svg :nth-child(2) {
+                fill: ${properties => properties.theme.colors.primary.main};
+            }
         }
     }
 `
