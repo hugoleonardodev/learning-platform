@@ -1,17 +1,18 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import styled, { ThemeProvider } from 'styled-components'
 
 import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
 
-import { history } from './store'
+import darkTheme from 'common/themes/darkTheme'
+import defaultTheme from 'common/themes/defaultTheme'
 
 import HomePage from 'pages/HomePage'
 import TeacherPage from 'pages/TeacherPage'
-import darkTheme from 'common/themes/darkTheme'
-import defaultTheme from 'common/themes/defaultTheme'
+
+import { history } from './store'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
-import { useSelector } from 'react-redux'
-import styled, { ThemeProvider } from 'styled-components'
 
 const RootWrapper = styled.div`
     background: ${properties => properties.theme.colors.background};

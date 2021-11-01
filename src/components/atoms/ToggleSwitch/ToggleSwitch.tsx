@@ -1,7 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { teacherSwitchTheme } from 'store/actions/teachersActions'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
+
 import { ToggleSwitchInput, ToggleSwitchLabel, ToggleSwitchSlider } from './styles'
 
 const ToggleSwitch: React.FC = () => {

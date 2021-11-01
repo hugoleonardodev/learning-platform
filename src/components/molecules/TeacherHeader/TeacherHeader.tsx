@@ -8,8 +8,6 @@ import {
     TeacherHeaderContainer,
     TeacherNav,
     TeacherNavBar,
-    // TeacherNavBarText,
-    // TeacherNavBarToggler,
     TeacherNavBrand,
     TeacherNavBrandLogo,
     TeacherNavCollapse,
@@ -32,9 +30,16 @@ import { fixedUrl } from 'common/functions'
 type TeacherHeaderProperties = {
     sideMenu: boolean
     toggleSideMenu: React.Dispatch<React.SetStateAction<boolean>>
+    selectedItem: string
+    setSelectedItem: React.Dispatch<React.SetStateAction<string>>
 }
 
-const TeacherHeader: React.FC<TeacherHeaderProperties> = ({ toggleSideMenu, sideMenu }) => {
+const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
+    toggleSideMenu,
+    sideMenu,
+    setSelectedItem,
+    selectedItem,
+}) => {
     const [isOpen, setIsOpen] = React.useState(false)
     const { url } = useRouteMatch()
     return (
@@ -55,8 +60,11 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({ toggleSideMenu, side
                         <TeacherNavItem>
                             <ToggleSwitch />
                         </TeacherNavItem>
-                        <TeacherNavItem>
-                            <TeacherNavLinkButton to={`${fixedUrl(url)}/messages`}>
+                        <TeacherNavItem onClick={() => setSelectedItem('messages')}>
+                            <TeacherNavLinkButton
+                                to={`${fixedUrl(url)}/messages`}
+                                isselected={selectedItem === 'messages'}
+                            >
                                 <NotificationsIcon />
                             </TeacherNavLinkButton>
                         </TeacherNavItem>

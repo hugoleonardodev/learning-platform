@@ -8,11 +8,11 @@ type MainContentProperties = {
 
 export const MainContent = styled.main<MainContentProperties>`
     display: flex;
+    color: ${properties => properties.theme.colors.text};
+    background: ${properties => properties.theme.colors.background};
     min-width: ${properties => (properties.sideMenu ? 'calc(80vw)' : 'calc(98vw + 104px)')};
     transform: ${properties => (properties.sideMenu ? 'translateX(0)' : 'translateX(-104px)')};
     transition: transform 0.6s ease;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
 `
 
 export const VertSideNav = styled.nav`
@@ -79,7 +79,6 @@ type MainSectionProperties = {
 
 export const MainSection = styled.section<MainSectionProperties>`
     height: 100vh;
-    min-width: ${properties => (properties.sideMenu ? 'calc(80vw)' : 'calc(98vw)')};
+    min-width: ${properties => (properties.sideMenu ? 'calc(70vw)' : 'calc(98vw)')};
     transition: min-width 0.6s ease;
-    margin-left: 36px;
 `

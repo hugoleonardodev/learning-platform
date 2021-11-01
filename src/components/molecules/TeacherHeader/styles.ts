@@ -83,12 +83,17 @@ export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
     }
 `
 
-export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkProperties>`
+type TeacherNavLinkButtonProperties = {
+    isselected: boolean
+} & TeacherNavLinkProperties
+
+export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkButtonProperties>`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     cursor: pointer;
     svg :nth-child(2) {
-        fill: ${properties => properties.theme.colors.text};
+        fill: ${properties =>
+            properties.isselected ? properties.theme.colors.primary.main : properties => properties.theme.colors.text};
     }
     &:hover {
         svg :nth-child(2) {
@@ -127,11 +132,18 @@ export const TeacherDropdownMenu = styled(DropdownMenu)`
     }
 `
 
-export const TeacherDropdownItem = styled(DropdownItem)`
+type TeacherDropdownItemProperties = {
+    divider: boolean
+}
+
+export const TeacherDropdownItem = styled(DropdownItem)<TeacherDropdownItemProperties>`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     &:hover {
-        background: ${properties => properties.theme.colors.primary.light};
+        background: ${properties =>
+            properties.divider
+                ? properties => properties.theme.colors.background
+                : properties.theme.colors.primary.light};
     }
 `
 

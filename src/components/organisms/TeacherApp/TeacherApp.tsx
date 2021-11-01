@@ -3,6 +3,8 @@ import { useRouteMatch } from 'react-router'
 
 import TeacherHeader from 'components/molecules/TeacherHeader'
 
+import { fixedUrl } from 'common/functions'
+
 import { ReactComponent as DashboardIcon } from 'common/assets/dashboard.svg'
 import { ReactComponent as ProfileIcon } from 'common/assets/profile.svg'
 import { ReactComponent as LessonsIcon } from 'common/assets/lessons.svg'
@@ -15,16 +17,19 @@ import {
     VertSideNavItemSelector,
     VertSideNavLink,
 } from './styles'
-import { fixedUrl } from 'common/functions'
 
 const TeacherApp: React.FC = ({ children }) => {
     const [sideMenu, toggleSideMenu] = React.useState(false)
     const [selectedItem, setSelectedItem] = React.useState('home')
     const { url } = useRouteMatch()
-
     return (
         <>
-            <TeacherHeader toggleSideMenu={toggleSideMenu} sideMenu={sideMenu} />
+            <TeacherHeader
+                toggleSideMenu={toggleSideMenu}
+                sideMenu={sideMenu}
+                setSelectedItem={setSelectedItem}
+                selectedItem={selectedItem}
+            />
             <MainContent sideMenu={sideMenu}>
                 <VertSideNav>
                     <VertSideNavLink
