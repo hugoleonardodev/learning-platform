@@ -12,6 +12,9 @@ const TeacherLessons: React.FC = () => {
 const TeacherProfile: React.FC = () => {
     return <div>Teacher Profile</div>
 }
+const TeacherMessages: React.FC = () => {
+    return <div>Teacher Messages</div>
+}
 const TeacherLayout: React.FC = () => {
     const { path } = useRouteMatch()
     return (
@@ -25,6 +28,9 @@ const TeacherLayout: React.FC = () => {
                 </Route>
                 <Route path={`${path}/profile`}>
                     <TeacherProfile />
+                </Route>
+                <Route path={`${path}/messages`}>
+                    <TeacherMessages />
                 </Route>
             </Switch>
         </TeacherApp>

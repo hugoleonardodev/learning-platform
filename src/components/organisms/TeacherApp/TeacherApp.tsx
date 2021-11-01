@@ -36,36 +36,36 @@ const TeacherApp: React.FC = ({ children }) => {
                     <VertSideNavLink
                         to={`${fixedUrl(url)}/`}
                         onClick={() => setSelectedItem('home')}
-                        isSelected={selectedItem === 'home'}
+                        isselected={selectedItem === 'home'}
                     >
-                        <VertSideNavItem isSelected={selectedItem === 'home'}>
+                        <VertSideNavItem isselected={selectedItem === 'home'}>
                             <DashboardIcon />
                             Home
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isSelected={selectedItem === 'home'} />
+                        <VertSideNavItemSelector isselected={selectedItem === 'home'} />
                     </VertSideNavLink>
                     <div className="divider" />
                     <VertSideNavLink
                         to={`${fixedUrl(url)}/profile`}
                         onClick={() => setSelectedItem('profile')}
-                        isSelected={selectedItem === 'profile'}
+                        isselected={selectedItem === 'profile'}
                     >
-                        <VertSideNavItem isSelected={selectedItem === 'profile'}>
+                        <VertSideNavItem isselected={selectedItem === 'profile'}>
                             <ProfileIcon />
                             Profile
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isSelected={selectedItem === 'profile'} />
+                        <VertSideNavItemSelector isselected={selectedItem === 'profile'} />
                     </VertSideNavLink>
                     <VertSideNavLink
                         to={`${fixedUrl(url)}/lessons`}
                         onClick={() => setSelectedItem('lessons')}
-                        isSelected={selectedItem === 'lessons'}
+                        isselected={selectedItem === 'lessons'}
                     >
-                        <VertSideNavItem isSelected={selectedItem === 'lessons'}>
+                        <VertSideNavItem isselected={selectedItem === 'lessons'}>
                             <LessonsIcon />
                             Lessons
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isSelected={selectedItem === 'lessons'} />
+                        <VertSideNavItemSelector isselected={selectedItem === 'lessons'} />
                     </VertSideNavLink>
                 </VertSideNav>
                 <MainSection sideMenu={sideMenu}>{children}</MainSection>

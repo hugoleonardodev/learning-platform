@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouteMatch } from 'react-router'
 
 import {
     TeacherDropdownItem,
@@ -7,14 +8,26 @@ import {
     TeacherHeaderContainer,
     TeacherNav,
     TeacherNavBar,
-    TeacherNavBarText,
-    TeacherNavBarToggler,
+    // TeacherNavBarText,
+    // TeacherNavBarToggler,
     TeacherNavBrand,
+    TeacherNavBrandLogo,
     TeacherNavCollapse,
     TeacherNavItem,
     TeacherNavLink,
+    TeacherNavLinkButton,
     TeacherUncontrolledDropdown,
 } from './styles'
+
+import { ReactComponent as HamburgerIcon } from 'common/assets/hamburger.svg'
+import { ReactComponent as MenuListIcon } from 'common/assets/menu_list.svg'
+import { ReactComponent as NotificationsIcon } from 'common/assets/notifications.svg'
+import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
+import { ReactComponent as FaceIcon } from 'common/assets/face.svg'
+
+import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'
+import ToggleSwitch from 'components/atoms/ToggleSwitch'
+import { fixedUrl } from 'common/functions'
 
 type TeacherHeaderProperties = {
     sideMenu: boolean
@@ -23,33 +36,46 @@ type TeacherHeaderProperties = {
 
 const TeacherHeader: React.FC<TeacherHeaderProperties> = ({ toggleSideMenu, sideMenu }) => {
     const [isOpen, setIsOpen] = React.useState(false)
+    const { url } = useRouteMatch()
     return (
         <TeacherHeaderContainer>
-            <TeacherNavBar color="dark" dark expand="md">
-                <TeacherNavBarToggler onClick={() => toggleSideMenu(!sideMenu)} />
-                <TeacherNavBrand href="/">TIME TO PLAY</TeacherNavBrand>
-                <TeacherNavBarToggler onClick={() => setIsOpen(!isOpen)} />
+            <TeacherNavBar expand="md">
+                <TeacherNavLink onClick={() => toggleSideMenu(!sideMenu)}>
+                    <HamburgerIcon />
+                </TeacherNavLink>
+                <TeacherNavBrand to="/" className="navbar-brand">
+                    <TeacherNavBrandLogo src={TimeToPlayLogo} alt="Time To Play" />
+                    TIME TO PLAY
+                </TeacherNavBrand>
+                <TeacherNavLink istoggle="true" onClick={() => setIsOpen(!isOpen)}>
+                    <MenuListIcon />
+                </TeacherNavLink>
                 <TeacherNavCollapse isOpen={isOpen} navbar>
                     <TeacherNav className="me-auto" navbar>
                         <TeacherNavItem>
-                            <TeacherNavLink href="/components/">Components</TeacherNavLink>
+                            <ToggleSwitch />
                         </TeacherNavItem>
                         <TeacherNavItem>
-                            <TeacherNavLink href="https://github.com/reactstrap/reactstrap">GitHub</TeacherNavLink>
+                            <TeacherNavLinkButton to={`${fixedUrl(url)}/messages`}>
+                                <NotificationsIcon />
+                            </TeacherNavLinkButton>
+                        </TeacherNavItem>
+                        <TeacherNavItem>
+                            <TeacherNavLink>
+                                <FullScreenIcon />
+                            </TeacherNavLink>
                         </TeacherNavItem>
                         <TeacherUncontrolledDropdown inNavbar nav>
-                            <TeacherDropdownToggle caret nav>
-                                Options
+                            <TeacherDropdownToggle nav>
+                                <FaceIcon />
                             </TeacherDropdownToggle>
                             <TeacherDropdownMenu end>
-                                <TeacherDropdownItem>Option 1</TeacherDropdownItem>
-                                <TeacherDropdownItem>Option 2</TeacherDropdownItem>
+                                <TeacherDropdownItem>Perfil</TeacherDropdownItem>
                                 <TeacherDropdownItem divider />
-                                <TeacherDropdownItem>Reset</TeacherDropdownItem>
+                                <TeacherDropdownItem>Sair</TeacherDropdownItem>
                             </TeacherDropdownMenu>
                         </TeacherUncontrolledDropdown>
                     </TeacherNav>
-                    <TeacherNavBarText>Simple Text</TeacherNavBarText>
                 </TeacherNavCollapse>
             </TeacherNavBar>
         </TeacherHeaderContainer>
