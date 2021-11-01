@@ -42,17 +42,7 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
         fill: ${properties =>
             properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
     }
-    /* &:hover {
-        color: ${properties => properties.theme.colors.primary.main};
-        svg :nth-child(2) {
-            fill: ${properties => properties.theme.colors.primary.main};
-        }
-    } */
 `
-
-// type VertSideNavItemSelectorProperties = {
-//     isselected: boolean
-// }
 
 export const VertSideNavItemSelector = styled.div<VertSideNavItemProperties>`
     width: 8px;
@@ -91,6 +81,5 @@ export const MainSection = styled.section<MainSectionProperties>`
     height: 100vh;
     min-width: ${properties => (properties.sideMenu ? 'calc(80vw)' : 'calc(98vw)')};
     transition: min-width 0.6s ease;
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
+    margin-left: 36px;
 `

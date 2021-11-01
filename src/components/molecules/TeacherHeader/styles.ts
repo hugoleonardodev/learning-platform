@@ -7,7 +7,6 @@ import {
     DropdownToggle,
     Nav,
     Navbar,
-    // NavbarBrand,
     NavbarText,
     NavbarToggler,
     NavItem,
@@ -21,20 +20,13 @@ export const TeacherHeaderContainer = styled.header`
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 28px;
-    /* color: ${properties => properties.theme.colors.text}; */
     background: ${properties => properties.theme.colors.background};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
 `
 
-export const TeacherNavBar = styled(Navbar)`
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
-`
+export const TeacherNavBar = styled(Navbar)``
 
-export const TeacherNavBarToggler = styled(NavbarToggler)`
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
-`
+export const TeacherNavBarToggler = styled(NavbarToggler)``
 
 export const TeacherNavBrand = styled(Link)`
     width: 78vw;
@@ -57,24 +49,17 @@ export const TeacherNavBrandLogo = styled.img`
     box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
 `
 
-export const TeacherNavCollapse = styled(Collapse)`
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
-`
+export const TeacherNavCollapse = styled(Collapse)``
 
 export const TeacherNav = styled(Nav)`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
 `
 
 export const TeacherNavItem = styled(NavItem)`
     display: flex;
     align-items: center;
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
 `
 
 type TeacherNavLinkProperties = {
