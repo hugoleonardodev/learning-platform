@@ -55,7 +55,7 @@ const FormLogin: React.FC<FormLoginProperties> = ({ setForgotPassword }) => {
     }
 
     if (redirectToWelcomePage) {
-        return <Redirect to="/teacher-welcome" />
+        return <Redirect to="/teacher-app" />
     }
 
     const emailClasses = clsx(
