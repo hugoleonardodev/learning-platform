@@ -2,7 +2,8 @@ import { TeacherActionsCreators } from 'store/actions/teachersActions'
 import { TeacherDataState, TeachersDataActionTypes } from 'store/constants/teachersDataTypes'
 
 const initialState = {
-    teacherEmail: '',
+    teacherEmail: 'Raimundo',
+    teacherIsAproved: false,
     currentLesson: 1,
     totalLessons: 4,
     nextLesson: false,

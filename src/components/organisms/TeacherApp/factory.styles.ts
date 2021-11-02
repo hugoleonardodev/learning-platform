@@ -81,4 +81,8 @@ export const MainSection = styled.section<MainSectionProperties>`
     height: 100vh;
     min-width: ${properties => (properties.sideMenu ? 'calc(70vw)' : 'calc(98vw)')};
     transition: min-width 0.6s ease;
+    transform: ${properties => (properties.sideMenu ? 'translateX(104px)' : 'translateX(0)')};
+    @media only screen and (max-width: 769px) {
+        transform: translateX(0);
+    }
 `

@@ -20,51 +20,37 @@ import {
 
 const TeacherApp: React.FC = ({ children }) => {
     const [sideMenu, toggleSideMenu] = React.useState(false)
-    const [selectedItem, setSelectedItem] = React.useState('home')
     const { url } = useRouteMatch()
+    const locationPathname = window.location.pathname
+    const selectedRoute = locationPathname.split('/')
+    const selectedItem = selectedRoute[selectedRoute.length - 1]
+
     return (
         <>
-            <TeacherHeader
-                toggleSideMenu={toggleSideMenu}
-                sideMenu={sideMenu}
-                setSelectedItem={setSelectedItem}
-                selectedItem={selectedItem}
-            />
+            <TeacherHeader toggleSideMenu={toggleSideMenu} sideMenu={sideMenu} selectedItem={selectedItem} />
             <MainContent sideMenu={sideMenu}>
                 <VertSideNav>
-                    <VertSideNavLink
-                        to={`${fixedUrl(url)}/`}
-                        onClick={() => setSelectedItem('home')}
-                        isselected={selectedItem === 'home'}
-                    >
-                        <VertSideNavItem isselected={selectedItem === 'home'}>
+                    <VertSideNavLink to={`${fixedUrl(url)}/`} isselected={selectedItem === ''}>
+                        <VertSideNavItem isselected={selectedItem === ''}>
                             <DashboardIcon />
                             Home
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isselected={selectedItem === 'home'} />
+                        <VertSideNavItemSelector isselected={selectedItem === ''} />
                     </VertSideNavLink>
                     <div className="divider" />
-                    <VertSideNavLink
-                        to={`${fixedUrl(url)}/profile`}
-                        onClick={() => setSelectedItem('profile')}
-                        isselected={selectedItem === 'profile'}
-                    >
-                        <VertSideNavItem isselected={selectedItem === 'profile'}>
-                            <ProfileIcon />
-                            Profile
-                        </VertSideNavItem>
-                        <VertSideNavItemSelector isselected={selectedItem === 'profile'} />
-                    </VertSideNavLink>
-                    <VertSideNavLink
-                        to={`${fixedUrl(url)}/lessons`}
-                        onClick={() => setSelectedItem('lessons')}
-                        isselected={selectedItem === 'lessons'}
-                    >
+                    <VertSideNavLink to={`${fixedUrl(url)}/lessons`} isselected={selectedItem === 'lessons'}>
                         <VertSideNavItem isselected={selectedItem === 'lessons'}>
                             <LessonsIcon />
                             Lessons
                         </VertSideNavItem>
                         <VertSideNavItemSelector isselected={selectedItem === 'lessons'} />
+                    </VertSideNavLink>
+                    <VertSideNavLink to={`${fixedUrl(url)}/profile`} isselected={selectedItem === 'profile'}>
+                        <VertSideNavItem isselected={selectedItem === 'profile'}>
+                            <ProfileIcon />
+                            Profile
+                        </VertSideNavItem>
+                        <VertSideNavItemSelector isselected={selectedItem === 'profile'} />
                     </VertSideNavLink>
                 </VertSideNav>
                 <MainSection sideMenu={sideMenu}>{children}</MainSection>

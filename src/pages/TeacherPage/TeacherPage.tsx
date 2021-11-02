@@ -3,21 +3,10 @@ import { Route, Switch, useRouteMatch } from 'react-router'
 
 import TeacherApp from 'components/organisms/TeacherApp'
 
-const TeacherHome: React.FC = () => {
-    return <div>Teacher Home</div>
-}
-
-const TeacherLessons: React.FC = () => {
-    return <div>Teacher Lessons</div>
-}
-
-const TeacherProfile: React.FC = () => {
-    return <div>Teacher Profile</div>
-}
-
-const TeacherMessages: React.FC = () => {
-    return <div>Teacher Messages</div>
-}
+import TeacherHome from 'layouts/TeacherHome'
+import TeacherLessons from 'layouts/TeacherLessons'
+import TeacherProfile from 'layouts/TeacherProfile'
+import TeacherMessages from 'layouts/TeacherMessages'
 
 const TeacherPage: React.FC = () => {
     const { path } = useRouteMatch()

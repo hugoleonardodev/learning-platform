@@ -60,6 +60,7 @@ export interface TeacherLesson {
 
 export interface TeacherDataState {
     teacherEmail: string
+    teacherIsAproved: boolean
     currentLesson: number
     totalLessons: number
     nextLesson: boolean

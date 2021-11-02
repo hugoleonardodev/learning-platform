@@ -31,13 +31,13 @@ type TeacherHeaderProperties = {
     sideMenu: boolean
     toggleSideMenu: React.Dispatch<React.SetStateAction<boolean>>
     selectedItem: string
-    setSelectedItem: React.Dispatch<React.SetStateAction<string>>
+    setSelectedItem?: React.Dispatch<React.SetStateAction<string>>
 }
 
 const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
     toggleSideMenu,
     sideMenu,
-    setSelectedItem,
+    // setSelectedItem,
     selectedItem,
 }) => {
     const [isOpen, setIsOpen] = React.useState(false)
@@ -60,7 +60,7 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                         <TeacherNavItem>
                             <ToggleSwitch />
                         </TeacherNavItem>
-                        <TeacherNavItem onClick={() => setSelectedItem('messages')}>
+                        <TeacherNavItem>
                             <TeacherNavLinkButton
                                 to={`${fixedUrl(url)}/messages`}
                                 isselected={selectedItem === 'messages'}
