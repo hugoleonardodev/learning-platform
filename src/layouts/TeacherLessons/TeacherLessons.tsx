@@ -13,22 +13,20 @@ const Lessons: React.FC<TeacherLessonsProperties> = () => {
 const TeacherLessons: React.FC = () => {
     const { path } = useRouteMatch()
     return (
-        <div>
-            <Switch>
-                <Route exact path={`${path}`}>
-                    <Lessons />
-                </Route>
-                <Route path={`${path}/lesson1`}>
-                    <TeacherWizard />
-                </Route>
-                <Route path={`${path}/lesson2`}>
-                    <TeacherWizard />
-                </Route>
-                <Route path={`${path}/lesson3`}>
-                    <TeacherWizard />
-                </Route>
-            </Switch>
-        </div>
+        <Switch>
+            <Route exact path={`${path}`}>
+                <Lessons />
+            </Route>
+            <Route path={`${path}/lesson1`}>
+                <TeacherWizard />
+            </Route>
+            <Route path={`${path}/lesson2`}>
+                <TeacherWizard />
+            </Route>
+            <Route path={`${path}/lesson3`}>
+                <TeacherWizard />
+            </Route>
+        </Switch>
     )
 }
 
