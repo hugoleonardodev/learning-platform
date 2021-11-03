@@ -2,7 +2,10 @@ import styled from 'styled-components'
 
 import { Container, Col, Row, CardGroup } from 'reactstrap'
 
-export const TeacherHomeContainer = styled(Container)``
+export const TeacherHomeContainer = styled(Container)`
+    margin: 0;
+    padding: 0;
+`
 
 export const TeacherHomeCol = styled(Col)``
 

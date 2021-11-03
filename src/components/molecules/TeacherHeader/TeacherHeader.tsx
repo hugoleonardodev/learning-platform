@@ -21,7 +21,7 @@ import { ReactComponent as HamburgerIcon } from 'common/assets/hamburger.svg'
 import { ReactComponent as MenuListIcon } from 'common/assets/menu_list.svg'
 import { ReactComponent as NotificationsIcon } from 'common/assets/notifications.svg'
 import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
-import { ReactComponent as FaceIcon } from 'common/assets/face.svg'
+import { ReactComponent as PersonIcon } from 'common/assets/person.svg'
 
 import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'
 import ToggleSwitch from 'components/atoms/ToggleSwitch'
@@ -75,7 +75,7 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                         </TeacherNavItem>
                         <TeacherUncontrolledDropdown inNavbar nav>
                             <TeacherDropdownToggle nav>
-                                <FaceIcon id="my-face-icon" />
+                                <PersonIcon id="person-icon" />
                             </TeacherDropdownToggle>
                             <TeacherDropdownMenu end>
                                 <TeacherDropdownItem>Perfil</TeacherDropdownItem>

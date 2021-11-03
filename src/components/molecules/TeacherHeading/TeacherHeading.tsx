@@ -21,27 +21,44 @@ type TeacherHeadingProperties = {
 
 const TeacherHeading: React.FC<TeacherHeadingProperties> = ({ sectionTitle, sectionLinks }) => {
     const { url } = useRouteMatch()
+
+    const fixedBreadcrumbPath = (breadcrumbTitle: string, breadcrumbLinks: SectionLink[]) => {
+        if (breadcrumbTitle.startsWith('Question')) {
+            const fixedArrayLinks = [...breadcrumbLinks]
+            const urlArray = url.split('/')
+            const lessonString = urlArray[urlArray.length - __TWO__]
+            const lessonPosition = Number.parseInt(lessonString[lessonString.length - 1])
+            const questionPosition = Number.parseInt(breadcrumbTitle[breadcrumbTitle.length - 1])
+
+            fixedArrayLinks.push({ linkTitle: `Lesson${lessonPosition}`, linkPath: `/${sectionTitle}` })
+
+            for (let questionsCount = 1; questionsCount <= questionPosition; questionsCount++) {
+                fixedArrayLinks.push({ linkTitle: `Question${questionsCount}`, linkPath: `/question${questionsCount}` })
+            }
+            return fixedArrayLinks
+        }
+        return breadcrumbLinks
+    }
+
+    const fixedSectionLinks = fixedBreadcrumbPath(sectionTitle, sectionLinks)
+
     return (
         <>
             <TeacherBreadcrumbTitle>{sectionTitle}</TeacherBreadcrumbTitle>
             <TeacherBreadcrumb>
-                {sectionLinks.length > 0 ? (
-                    sectionLinks.map(link => (
-                        <TeacherBreadcrumbItem key={link.linkTitle}>
-                            <TeacherBreadcrumbLink to={`${url}${link.linkPath}`}>
-                                {link.linkTitle}
+                {fixedSectionLinks.map((sectionLink, index) =>
+                    index !== fixedSectionLinks.length - 1 ? (
+                        <TeacherBreadcrumbItem active key={sectionLink.linkTitle}>
+                            {sectionLink.linkTitle}
+                        </TeacherBreadcrumbItem>
+                    ) : (
+                        <TeacherBreadcrumbItem active key={sectionLink.linkTitle}>
+                            <TeacherBreadcrumbLink to={`${url}${sectionLink.linkPath}`}>
+                                {sectionLink.linkTitle}
                             </TeacherBreadcrumbLink>
                         </TeacherBreadcrumbItem>
-                    ))
-                ) : (
-                    <>
-                        <TeacherBreadcrumbItem>
-                            <TeacherBreadcrumbLink to={`${url}/`}>Teacher App</TeacherBreadcrumbLink>
-                            <TeacherBreadcrumbItem active>Home</TeacherBreadcrumbItem>
-                        </TeacherBreadcrumbItem>
-                    </>
+                    ),
                 )}
-                <TeacherBreadcrumbItem active>{sectionTitle}</TeacherBreadcrumbItem>
             </TeacherBreadcrumb>
             <TeacherSeparator />
         </>

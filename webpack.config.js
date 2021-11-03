@@ -54,6 +54,7 @@ const config = function (environment, arguments_) {
                 __PRODUCTION__: JSON.stringify(isProductionEnvironment),
                 __APP_NAME__: JSON.stringify('BoilerPlate'),
                 __TWO__: 2,
+                __ONE_SECOND__: 1000,
             }),
             new HtmlWebpackPlugin({
                 title: package_.name || 'Webpack App',

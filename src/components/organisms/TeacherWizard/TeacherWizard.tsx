@@ -5,13 +5,20 @@ import { useSelector } from 'react-redux'
 import { VideoQuestion } from 'store/constants/teachersDataTypes'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
-import WizardInstructions from './WizardInstructions'
+// import WizardInstructions from './WizardInstructions'
 import WizardStep from './WizardStep'
 import WizardResult from './WizardResult'
+import VideoPlayer from 'components/molecules/VideoPlayer'
+import TeacherHeading from 'components/molecules/TeacherHeading'
 
 const fixedPathWithLength = (array: VideoQuestion[], index: number) => {
     return index === array.length - 1 ? 'result' : 'question' + (index + __TWO__)
 }
+
+const teacherHomeSectionLinks = [
+    { linkTitle: 'App', linkPath: '' },
+    { linkTitle: 'Lessons', linkPath: '/lessons' },
+]
 
 const TeacherWizard: React.FC = () => {
     const { path } = useRouteMatch()
@@ -22,10 +29,12 @@ const TeacherWizard: React.FC = () => {
     return (
         <Switch>
             <Route exact path={path}>
-                <WizardInstructions />
+                <TeacherHeading sectionTitle="Lesson1" sectionLinks={teacherHomeSectionLinks} />
+                <VideoPlayer />
             </Route>
             {videoQuestions.map((question, index) => (
                 <Route path={`${path}/question${index + 1}`} key={question.question}>
+                    <TeacherHeading sectionTitle={`Question${index + 1}`} sectionLinks={teacherHomeSectionLinks} />
                     <WizardStep
                         nextStep={`${path}/${fixedPathWithLength(videoQuestions, index)}`}
                         currentQuestion={index}

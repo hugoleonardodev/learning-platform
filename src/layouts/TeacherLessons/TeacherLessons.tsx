@@ -1,21 +1,16 @@
 import React from 'react'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
 
+// import LessonsInstructions from 'components/molecules/LessonsInstructions'
 import TeacherWizard from 'components/organisms/TeacherWizard'
-
-type TeacherLessonsProperties = {
-    currentLesson?: string
-}
-const Lessons: React.FC<TeacherLessonsProperties> = () => {
-    return <div>Intruções para a lição</div>
-}
+import TeacherInstructions from 'components/organisms/TeacherInstructions'
 
 const TeacherLessons: React.FC = () => {
     const { path } = useRouteMatch()
     return (
         <Switch>
             <Route exact path={`${path}`}>
-                <Lessons />
+                <TeacherInstructions />
             </Route>
             <Route path={`${path}/lesson1`}>
                 <TeacherWizard />
