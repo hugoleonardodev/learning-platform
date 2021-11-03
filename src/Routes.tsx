@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled, { ThemeProvider } from 'styled-components'
-
-import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
+import { Route, Switch } from 'react-router-dom'
 
 import darkTheme from 'common/themes/darkTheme'
 import defaultTheme from 'common/themes/defaultTheme'

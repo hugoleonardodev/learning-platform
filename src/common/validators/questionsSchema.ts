@@ -1,6 +1,7 @@
 import yup from './yup'
 
 const questionsSchema = yup.object({
+    question: yup.string().required().oneOf(['0', '1', '2', '3']),
     question1: yup.string().oneOf(['0', '1', '2', '3']),
     question2: yup.string().oneOf(['0', '1', '2', '3']),
     question3: yup.string().oneOf(['0', '1', '2', '3']),

@@ -11,81 +11,52 @@ const initialState = {
     isQuizStarted: false,
     isLoading: false,
     switchTheme: false,
+    completedLessons: [],
     teacherLessons: [
         {
-            lessonId: 1,
+            lessonId: 'teacher-lesson-1',
             videoPath: 'https://www.youtube.com/watch?v=iDT2128CWoM',
             videoQuestions: [
                 {
                     question: 'Qual das características a seguir a pelúcia da Galinha Pintadinha não apresenta ??',
-                    answers: {
-                        answerA: 'Resistente',
-                        answerB: 'Super fofinha',
-                        answerC: 'Produto oficial',
-                        answerD: 'Tóxica',
-                    },
+                    answers: ['Resistente', 'Super fofinha', 'Produto oficial', 'Tóxica'],
                     correct: '3',
                 },
                 {
                     question: 'Qual é a cor da pelúcia da Galinha Pintadinha ??',
-                    answers: {
-                        answerA: 'Verde',
-                        answerB: 'Amarelo',
-                        answerC: 'Azul',
-                        answerD: 'Branco',
-                    },
+                    answers: ['Verde', 'Amarelo', 'Azul', 'Branco'],
                     correct: '2',
                 },
             ],
         },
         {
-            lessonId: 2,
+            lessonId: 'teacher-lesson-2',
             videoPath: 'https://www.youtube.com/watch?v=eB_pjpNb2FQ',
             videoQuestions: [
                 {
                     question: 'Qual o conto clássico foi mencionado no vídeo ??',
-                    answers: {
-                        answerA: 'Os Três Porquinhos',
-                        answerB: 'Cinderalla',
-                        answerC: 'A tartaruga e a Lebre',
-                        answerD: 'Curupira',
-                    },
+                    answers: ['Os Três Porquinhos', 'Cinderalla', 'A tartaruga e a Lebre', 'Curupira'],
                     correct: '2',
                 },
                 {
                     question: 'Qual a cor do telhado da casa da Galinha Pintadinha ??',
-                    answers: {
-                        answerA: 'Roxo',
-                        answerB: 'Amarelo',
-                        answerC: 'Azul',
-                        answerD: 'Branco',
-                    },
+                    answers: ['Roxo', 'Amarelo', 'Azul', 'Branco'],
                     correct: '0',
                 },
             ],
         },
         {
-            lessonId: 3,
+            lessonId: 'teacher-lesson-3',
             videoPath: 'https://www.youtube.com/watch?v=vAO9WQsMU0Q',
             videoQuestions: [
                 {
                     question: 'Qual o conto clássico foi mencionado no vídeo ??',
-                    answers: {
-                        answerA: 'Os Três Porquinhos',
-                        answerB: 'Cinderalla',
-                        answerC: 'A tartaruga e a Lebre',
-                        answerD: 'Curupira',
-                    },
+                    answers: ['Os Três Porquinhos', 'Cinderalla', 'A tartaruga e a Lebre', 'Curupira'],
                     correct: '0',
                 },
                 {
                     question: 'Qual é a cor do ursinho do filhote da Galinha Pintadinha ??',
-                    answers: {
-                        answerA: 'Azul',
-                        answerB: 'Amarelo',
-                        answerC: 'Verde',
-                        answerD: 'Branco',
-                    },
+                    answers: ['Azul', 'Amarelo', 'Verde', 'Branco'],
                     correct: '2',
                 },
             ],
@@ -117,6 +88,11 @@ const teachersDataReducer = (
             return {
                 ...state,
                 switchTheme: action.payload,
+            }
+        case TeachersDataActionTypes.TEACHER_ANSWERING_QUESTION:
+            return {
+                ...state,
+                completedLessons: [...state.completedLessons, action.payload],
             }
         default:
             return state

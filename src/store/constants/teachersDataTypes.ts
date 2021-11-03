@@ -1,26 +1,12 @@
 /**
- * Quote with text and author from https://type.fit/api/quotes
- * @text a quote from an author
- * @author author of the quote or unknown
- */
-
-export interface Quote {
-    text: string
-    author: string
-}
-
-/**
- * Quotes Data types
- * @data an array of quotes from https://type.fit/api/quotes
- */
-
-export interface QuoteData {
-    data: Quote[]
-}
-
-/**
- * Quotes Data Action types
- * @UPDATE_ALL apdates all data quotes
+ * Teacher Data Action Types.
+ * Actions realated with the teacher profile and training.
+ * @TEACHER_LOGIN   When teacher's logs in
+ * @TEACHER_STARTING_COURSE     starts the course with videos and questions
+ * @TEACHER_RE_STARTING_COURSE     restart the full course or a question
+ * @TEACHER_STARTING_QUIZ   starts the questionary for the video
+ * @TEACHER_ANSWERING_QUESTION  triggers question answer action
+ * @TEACHER_SWITCH_THEME    switches the main app theme (light/dark)
  */
 
 export enum TeachersDataActionTypes {
@@ -32,28 +18,25 @@ export enum TeachersDataActionTypes {
     TEACHER_SWITCH_THEME = 'TEACHER_SWITCH_THEME',
 }
 
-// export interface TeacherEmail {
-//     teacherEmail: string
-// }
+/**
+ * Teacher Login Action Type
+ * @type a string with the type of the action
+ * @payload a string with the payload for the action
+ */
 
 export interface TeacherLogin {
     type: string
     payload: string
 }
-export interface VideoQuestionAnswers {
-    answerA: string
-    answerB: string
-    answerC: string
-    answerD: string
-}
+
 export interface VideoQuestion {
     question: string
-    answers: VideoQuestionAnswers
+    answers: string[]
     correct: string | number
 }
 
 export interface TeacherLesson {
-    lessonId: number
+    lessonId: string
     videoPath: string
     videoQuestions: VideoQuestion[]
 }
@@ -69,4 +52,5 @@ export interface TeacherDataState {
     isLoading: boolean
     switchTheme: boolean
     teacherLessons: TeacherLesson[]
+    completedLessons: string[]
 }
