@@ -23,6 +23,10 @@ export const VertSideNav = styled.nav`
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
+    @media only screen and (max-width: 769px) {
+        max-width: 72px;
+        min-width: 72px;
+    }
 `
 
 type VertSideNavItemProperties = {
@@ -42,6 +46,12 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
         fill: ${properties =>
             properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
     }
+    @media only screen and (max-width: 769px) {
+        min-width: unset;
+        min-height: unset;
+        max-width: 72px;
+        max-height: 72px;
+    }
 `
 
 export const VertSideNavItemSelector = styled.div<VertSideNavItemProperties>`
@@ -59,6 +69,7 @@ type VertSideNavLinkProperties = {
 
 export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
     display: flex;
+    justify-content: center;
     text-decoration: none;
     padding: 12px 0;
     color: ${properties =>
@@ -70,6 +81,10 @@ export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
                 fill: ${properties => properties.theme.colors.primary.main};
             }
         }
+    }
+    @media only screen and (max-width: 769px) {
+        margin-left: 4px;
+        justify-content: space-around;
     }
 `
 
@@ -84,6 +99,6 @@ export const MainSection = styled.section<MainSectionProperties>`
     transition: min-width 0.6s ease;
     transform: ${properties => (properties.sideMenu ? 'translateX(-64px)' : 'translateX(0)')};
     @media only screen and (max-width: 769px) {
-        transform: translateX(-64px);
+        transform: ${properties => (properties.sideMenu ? 'translateX(-84px)' : 'translateX(-36px)')};
     }
 `
