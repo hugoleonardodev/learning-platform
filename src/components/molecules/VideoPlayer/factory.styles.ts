@@ -23,6 +23,7 @@ export const VideoPlayerBackdrop = styled.div`
 export const VideoPlayerButtonsContainer = styled.div`
     position: absolute;
     margin-top: 32px;
+    padding-bottom: 32px;
     & :nth-child(2) {
         margin-left: 20px;
     }
