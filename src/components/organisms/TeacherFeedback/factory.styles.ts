@@ -21,6 +21,12 @@ export const TeacherFeedbackContainer = styled.div`
     }
 `
 
+export const TeacherFeedbackTitle = styled.h2`
+    @media only screen and (max-width: 769px) {
+        font-size: calc(1.125rem + 0.9vw);
+    }
+`
+
 export const TeacherFeedbackMenuButtonContainer = styled.div``
 
 export const TeacherFeedbackButtonsToolbar = styled(ButtonToolbar)`
@@ -72,6 +78,9 @@ export const TeacherFeedbackMenuButton = styled(Button)<TeacherFeedbackMenuButto
             properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
         box-shadow: ${properties =>
             properties.isclearbutton ? '0 0 0 0.25rem rgb(155 055 055 / 25%)' : '0 0 0 0.25rem rgb(0 166 156 / 25%)'};
+    }
+    @media only screen and (max-width: 769px) {
+        margin: 4px 0;
     }
 `
 

@@ -7,6 +7,7 @@ import {
     TeacherFeedbackContainer,
     TeacherFeedbackMenuButton,
     TeacherFeedbackSubmitButton,
+    TeacherFeedbackTitle,
 } from './factory.styles'
 
 import { BoldItalicUnderline, OrderedAndUnorderedLists, TextOptions, UndoAndRedo } from './ButtonGroups'
@@ -84,7 +85,9 @@ const TeacherFeedback: React.FC = () => {
 
     return (
         <TeacherFeedbackContainer>
-            <h2>Envie-nos um feedback a respeito dos módulos de treinamento e questionário.</h2>
+            <TeacherFeedbackTitle>
+                Envie-nos um feedback a respeito dos módulos de treinamento e questionário.
+            </TeacherFeedbackTitle>
             {isTextAreaDisabled ? (
                 <div>Agradecemos o feedback!</div>
             ) : (

@@ -24,8 +24,8 @@ export const VertSideNav = styled.nav`
     background: ${properties => properties.theme.colors.background};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
     @media only screen and (max-width: 769px) {
-        max-width: 72px;
-        min-width: 72px;
+        max-width: 76px;
+        min-width: 76px;
     }
 `
 
@@ -47,10 +47,10 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
             properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
     }
     @media only screen and (max-width: 769px) {
-        min-width: unset;
+        min-width: 58px;
         min-height: unset;
-        max-width: 72px;
-        max-height: 72px;
+        max-width: 76px;
+        max-height: 76px;
     }
 `
 
@@ -84,7 +84,7 @@ export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
     }
     @media only screen and (max-width: 769px) {
         margin-left: 4px;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 `
 
@@ -99,6 +99,6 @@ export const MainSection = styled.section<MainSectionProperties>`
     transition: min-width 0.6s ease;
     transform: ${properties => (properties.sideMenu ? 'translateX(-64px)' : 'translateX(0)')};
     @media only screen and (max-width: 769px) {
-        transform: ${properties => (properties.sideMenu ? 'translateX(-84px)' : 'translateX(-36px)')};
+        transform: ${properties => (properties.sideMenu ? 'translateX(-88px)' : 'translateX(-44px)')};
     }
 `

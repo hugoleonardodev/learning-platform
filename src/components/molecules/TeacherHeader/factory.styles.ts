@@ -125,6 +125,9 @@ export const TeacherDropdownToggle = styled(DropdownToggle)`
             fill: ${properties => properties.theme.colors.primary.main};
         }
     }
+    @media only screen and (max-width: 769px) {
+        margin-right: 8px;
+    }
 `
 
 export const TeacherUncontrolledDropdown = styled(UncontrolledDropdown)`
