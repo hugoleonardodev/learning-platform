@@ -16,6 +16,8 @@ export enum TeachersDataActionTypes {
     TEACHER_STARTING_QUIZ = 'TEACHER_STARTING_QUIZ',
     TEACHER_ANSWERING_QUESTION = 'TEACHER_ANSWERING_QUESTION',
     TEACHER_SWITCH_THEME = 'TEACHER_SWITCH_THEME',
+    TEACHER_CLEAR_CURRENT_ANSWERS = 'TEACHER_CLEAR_CURRENT_ANSWERS',
+    TEACHER_UPDATE_COMPLETED_LESSONS = 'TEACHER_UPDATE_COMPLETED_LESSONS',
 }
 
 /**
@@ -51,6 +53,7 @@ export interface TeacherDataState {
     isQuizStarted: boolean
     isLoading: boolean
     switchTheme: boolean
-    teacherLessons: TeacherLesson[]
     completedLessons: string[]
+    currentAnswers: string[]
+    teacherLessons: TeacherLesson[]
 }

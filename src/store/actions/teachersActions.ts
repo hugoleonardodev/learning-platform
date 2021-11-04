@@ -50,9 +50,29 @@ export const teacherAnsweringQuestion = (answer: string): TeacherAnsweringQuesti
     payload: answer,
 })
 
+export interface TeacherClearCurrentAnswers {
+    type: TeachersDataActionTypes.TEACHER_CLEAR_CURRENT_ANSWERS
+}
+
+export const teacherClearCurrentAnswers = (): TeacherClearCurrentAnswers => ({
+    type: TeachersDataActionTypes.TEACHER_CLEAR_CURRENT_ANSWERS,
+})
+
+export interface TeacherUpdateCompleteLesssons {
+    type: TeachersDataActionTypes.TEACHER_UPDATE_COMPLETED_LESSONS
+    payload: string
+}
+
+export const teacherUpdateCompletedLessons = (lesson: string): TeacherUpdateCompleteLesssons => ({
+    type: TeachersDataActionTypes.TEACHER_UPDATE_COMPLETED_LESSONS,
+    payload: lesson,
+})
+
 export type TeacherActionsCreators =
     | TeacherEmailLoginAction
     | TeacherStartingCourseAction
     | TeacherStartingQuizAction
     | TeacherSwtichThemeAction
     | TeacherAnsweringQuestion
+    | TeacherClearCurrentAnswers
+    | TeacherUpdateCompleteLesssons

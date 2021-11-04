@@ -12,6 +12,7 @@ const initialState = {
     isLoading: false,
     switchTheme: false,
     completedLessons: [],
+    currentAnswers: [],
     teacherLessons: [
         {
             lessonId: 'teacher-lesson-1',
@@ -19,8 +20,8 @@ const initialState = {
             videoQuestions: [
                 {
                     question: 'Qual das características a seguir a pelúcia da Galinha Pintadinha não apresenta ??',
-                    answers: ['Resistente', 'Super fofinha', 'Produto oficial', 'Tóxica'],
-                    correct: '3',
+                    answers: ['Tóxica', 'Resistente', 'Super fofinha', 'Produto oficial'],
+                    correct: '0',
                 },
                 {
                     question: 'Qual é a cor da pelúcia da Galinha Pintadinha ??',
@@ -90,6 +91,16 @@ const teachersDataReducer = (
                 switchTheme: action.payload,
             }
         case TeachersDataActionTypes.TEACHER_ANSWERING_QUESTION:
+            return {
+                ...state,
+                currentAnswers: [...state.currentAnswers, action.payload],
+            }
+        case TeachersDataActionTypes.TEACHER_CLEAR_CURRENT_ANSWERS:
+            return {
+                ...state,
+                currentAnswers: [],
+            }
+        case TeachersDataActionTypes.TEACHER_UPDATE_COMPLETED_LESSONS:
             return {
                 ...state,
                 completedLessons: [...state.completedLessons, action.payload],

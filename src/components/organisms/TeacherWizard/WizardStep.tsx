@@ -1,9 +1,19 @@
+import { Asserts } from 'yup'
+import { useForm } from 'react-hook-form'
 import React from 'react'
 import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Asserts } from 'yup'
+
+import {
+    WizardStepAnswerInput,
+    WizardStepAnswerLabel,
+    WizardStepForm,
+    WizardStepFormButton,
+    WizardStepQuestion,
+    WizardStepTitle,
+    WizarStepAnswersContainer,
+} from './factory.styles'
 
 import questionsSchema from 'common/validators/questionsSchema'
 
@@ -47,18 +57,19 @@ const WizardStep: React.FC<WizardStepProperties> = ({ nextStep, currentQuestion 
 
     const lessonPosition = Number.parseInt(lessonPathString[lessonPathString.length - 1])
 
-    const { videoQuestions } = teacherLessons[currentQuestion]
+    const { videoQuestions } = teacherLessons[lessonPosition - 1]
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <h2>
-                {`Questão ${currentQuestion + 1}`}
-                {videoQuestions[lessonPosition - 1].question}
-            </h2>
-            <div key={videoQuestions[lessonPosition - 1].question} className="form-questions-section">
-                {videoQuestions[lessonPosition - 1].answers.map((answer, index) => (
-                    <label key={answer} htmlFor={answer}>
-                        <input
+        <WizardStepForm onSubmit={handleSubmit(onSubmit)}>
+            <WizardStepTitle>{`Questão ${currentQuestion + 1}`}</WizardStepTitle>
+            <WizardStepQuestion>{videoQuestions[currentQuestion].question}</WizardStepQuestion>
+            <WizarStepAnswersContainer
+                key={videoQuestions[currentQuestion].question}
+                className="form-questions-section"
+            >
+                {videoQuestions[currentQuestion].answers.map((answer, index) => (
+                    <WizardStepAnswerLabel key={answer} htmlFor={answer}>
+                        <WizardStepAnswerInput
                             type="radio"
                             id={answer}
                             value={index.toString()}
@@ -66,13 +77,13 @@ const WizardStep: React.FC<WizardStepProperties> = ({ nextStep, currentQuestion 
                             {...register('question')}
                         />
                         {answer}
-                    </label>
+                    </WizardStepAnswerLabel>
                 ))}
-            </div>
-            <button type="submit" disabled={!submitButtonIsDisabled}>
+            </WizarStepAnswersContainer>
+            <WizardStepFormButton type="submit" disabled={!submitButtonIsDisabled}>
                 Responder questão
-            </button>
-        </form>
+            </WizardStepFormButton>
+        </WizardStepForm>
     )
 }
 

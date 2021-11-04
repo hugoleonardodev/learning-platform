@@ -21,20 +21,33 @@ type TeacherHeadingProperties = {
 
 const TeacherHeading: React.FC<TeacherHeadingProperties> = ({ sectionTitle, sectionLinks }) => {
     const { url } = useRouteMatch()
+    // const [totalQuestions, setTotalQuestions] = React.useState(0)
+    const totalQuestions = React.useRef(0)
 
     const fixedBreadcrumbPath = (breadcrumbTitle: string, breadcrumbLinks: SectionLink[]) => {
         if (breadcrumbTitle.startsWith('Question')) {
             const fixedArrayLinks = [...breadcrumbLinks]
-            const urlArray = url.split('/')
-            const lessonString = urlArray[urlArray.length - __TWO__]
-            const lessonPosition = Number.parseInt(lessonString[lessonString.length - 1])
+            // const urlArray = url.split('/')
+            // const lessonString = urlArray[urlArray.length - __TWO__]
+            // const lessonPosition = Number.parseInt(lessonString[lessonString.length - 1])
             const questionPosition = Number.parseInt(breadcrumbTitle[breadcrumbTitle.length - 1])
 
-            fixedArrayLinks.push({ linkTitle: `Lesson${lessonPosition}`, linkPath: `/${sectionTitle}` })
-
+            // fixedArrayLinks.push({ linkTitle: `Lesson${lessonPosition}`, linkPath: `/${sectionTitle}` })
+            // setTotalQuestions(questionPosition)
+            totalQuestions.current = questionPosition
             for (let questionsCount = 1; questionsCount <= questionPosition; questionsCount++) {
                 fixedArrayLinks.push({ linkTitle: `Question${questionsCount}`, linkPath: `/question${questionsCount}` })
             }
+            return fixedArrayLinks
+        }
+        if (breadcrumbTitle.startsWith('Result')) {
+            const fixedArrayLinks = [...breadcrumbLinks]
+
+            for (let questionsCount = 1; questionsCount <= totalQuestions.current; questionsCount++) {
+                fixedArrayLinks.push({ linkTitle: `Question${questionsCount}`, linkPath: `/question${questionsCount}` })
+            }
+            fixedArrayLinks.push({ linkTitle: 'Result', linkPath: '/result' })
+
             return fixedArrayLinks
         }
         return breadcrumbLinks
