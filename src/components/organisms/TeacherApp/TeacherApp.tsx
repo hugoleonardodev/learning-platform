@@ -37,19 +37,25 @@ const TeacherApp: React.FC = ({ children }) => {
                         </VertSideNavItem>
                         <VertSideNavItemSelector isselected={selectedItem === ''} />
                     </VertSideNavLink> */}
-                    <VertSideNavLink to={`${fixedUrl(url)}/lessons`} isselected={selectedItem === 'lessons'}>
-                        <VertSideNavItem isselected={selectedItem === 'lessons'}>
+                    <VertSideNavLink
+                        to={`${fixedUrl(url)}/lessons`}
+                        isselected={locationPathname.includes('lessons') ? 'true' : 'false'}
+                    >
+                        <VertSideNavItem isselected={locationPathname.includes('lessons') ? 'true' : 'false'}>
                             <LessonsIcon />
                             Lessons
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isselected={selectedItem === 'lessons'} />
+                        <VertSideNavItemSelector isselected={locationPathname.includes('lessons') ? 'true' : 'false'} />
                     </VertSideNavLink>
-                    <VertSideNavLink to={`${fixedUrl(url)}/profile`} isselected={selectedItem === 'profile'}>
-                        <VertSideNavItem isselected={selectedItem === 'profile'}>
+                    <VertSideNavLink
+                        to={`${fixedUrl(url)}/profile`}
+                        isselected={locationPathname.includes('profile') ? 'true' : 'false'}
+                    >
+                        <VertSideNavItem isselected={locationPathname.includes('profile') ? 'true' : 'false'}>
                             <ProfileIcon />
                             Profile
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isselected={selectedItem === 'profile'} />
+                        <VertSideNavItemSelector isselected={locationPathname.includes('profile') ? 'true' : 'false'} />
                     </VertSideNavLink>
                 </VertSideNav>
                 <MainSection sideMenu={sideMenu}>{children}</MainSection>

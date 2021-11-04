@@ -30,7 +30,7 @@ export const VertSideNav = styled.nav`
 `
 
 type VertSideNavItemProperties = {
-    isselected: boolean
+    isselected: string
 }
 
 export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
@@ -40,11 +40,11 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
     flex-direction: column;
     align-items: center;
     color: ${properties =>
-        properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
+        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
     svg :nth-child(2) {
         fill: ${properties =>
-            properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
+            properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.text};
     }
     @media only screen and (max-width: 769px) {
         min-width: 58px;
@@ -60,11 +60,11 @@ export const VertSideNavItemSelector = styled.div<VertSideNavItemProperties>`
     min-height: 72px;
     color: ${properties => properties.theme.colors.text};
     background: ${properties =>
-        properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.background};
+        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.background};
 `
 
 type VertSideNavLinkProperties = {
-    isselected: boolean
+    isselected: string
 }
 
 export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
@@ -73,7 +73,7 @@ export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
     text-decoration: none;
     padding: 12px 0;
     color: ${properties =>
-        properties.isselected ? properties.theme.colors.primary.main : properties.theme.colors.text};
+        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.text};
     &:hover {
         .nav-item {
             color: ${properties => properties.theme.colors.primary.main};
