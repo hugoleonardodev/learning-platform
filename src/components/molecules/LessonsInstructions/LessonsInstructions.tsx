@@ -52,6 +52,23 @@ const LessonsInstructions: React.FC = () => {
                         final;
                     </LessonsInstructionsWelcomeText>
                 </LessonsInstructionsItem>
+                <LessonsInstructionsItem>
+                    <LessonsInstructionsWelcomeText>
+                        Após aprovado, será enviado um email com as datas para agendamento da entrevista final;
+                    </LessonsInstructionsWelcomeText>
+                </LessonsInstructionsItem>
+                <LessonsInstructionsItem>
+                    <LessonsInstructionsWelcomeText>
+                        Não deixe de comentar sobre os módulos de treinamento e e questionários. Sua opinião é muito
+                        importante;
+                    </LessonsInstructionsWelcomeText>
+                </LessonsInstructionsItem>
+                <LessonsInstructionsItem>
+                    <LessonsInstructionsWelcomeText>
+                        Sinta-se livre para utilizar papel e caneta para anotações em cada lição. Você também pode
+                        pausar o vídeo a qualquer momento;
+                    </LessonsInstructionsWelcomeText>
+                </LessonsInstructionsItem>
             </LessonsInstructionsList>
             <LessonsInstructionsParagraph>Bons estudos e nos vemos na primeira lição!</LessonsInstructionsParagraph>
             <LessonsInstructionsButtonContainer>

@@ -62,6 +62,7 @@ const TeacherHeading: React.FC<TeacherHeadingProperties> = ({ sectionTitle, sect
             console.log(totalLessons.current)
             console.log(lessonPosition)
 
+            lessonPosition && fixedArrayLinks.pop()
             for (let lessonsCount = 1; lessonsCount <= totalLessons.current; lessonsCount++) {
                 fixedArrayLinks.push({ linkTitle: `Lesson${lessonsCount}`, linkPath: `/lesson${lessonsCount}` })
             }

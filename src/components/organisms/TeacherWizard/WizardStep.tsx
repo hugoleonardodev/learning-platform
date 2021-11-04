@@ -17,7 +17,7 @@ import {
 
 import questionsSchema from 'common/validators/questionsSchema'
 
-import { teacherAnsweringQuestion } from 'store/actions/teachersActions'
+import { teacherAnsweringQuestion, teacherIsAproved } from 'store/actions/teachersActions'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 type TFormData = Asserts<typeof questionsSchema>
@@ -41,21 +41,23 @@ const WizardStep: React.FC<WizardStepProperties> = ({ nextStep, currentQuestion 
     const submitButtonIsDisabled = !questionOneFieldHasError && questionOneFieldIsDirty
 
     const dispatch = useDispatch()
+    const completedLessons = useSelector((state: RootStateWithReducers) => state.teachers.completedLessons)
 
     const history = useHistory()
 
     const teacherLessons = useSelector((state: RootStateWithReducers) => state.teachers.teacherLessons)
-
-    const onSubmit = (data: TFormData) => {
-        dispatch(teacherAnsweringQuestion(data.question))
-        history.push(nextStep)
-    }
 
     const loacationPath = window.location.pathname
     const splitedLocationPath = loacationPath.split('/')
     const lessonPathString = splitedLocationPath[splitedLocationPath.length - __TWO__]
 
     const lessonPosition = Number.parseInt(lessonPathString[lessonPathString.length - 1])
+
+    const onSubmit = (data: TFormData) => {
+        dispatch(teacherAnsweringQuestion(data.question))
+        teacherLessons.length === completedLessons.length && dispatch(teacherIsAproved(true))
+        history.push(nextStep)
+    }
 
     const { videoQuestions } = teacherLessons[lessonPosition - 1]
 

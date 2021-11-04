@@ -68,6 +68,16 @@ export const teacherUpdateCompletedLessons = (lesson: string): TeacherUpdateComp
     payload: lesson,
 })
 
+export interface TeacherIsAproved {
+    type: TeachersDataActionTypes.TEACHER_IS_APROVED
+    payload: boolean
+}
+
+export const teacherIsAproved = (isAproved: boolean): TeacherIsAproved => ({
+    type: TeachersDataActionTypes.TEACHER_IS_APROVED,
+    payload: isAproved,
+})
+
 export type TeacherActionsCreators =
     | TeacherEmailLoginAction
     | TeacherStartingCourseAction
@@ -76,3 +86,4 @@ export type TeacherActionsCreators =
     | TeacherAnsweringQuestion
     | TeacherClearCurrentAnswers
     | TeacherUpdateCompleteLesssons
+    | TeacherIsAproved
