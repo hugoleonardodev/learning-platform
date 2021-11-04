@@ -84,6 +84,7 @@ const TeacherFeedback: React.FC = () => {
 
     return (
         <TeacherFeedbackContainer>
+            <h2>Envie-nos um feedback a respeito dos módulos de treinamento e questionário.</h2>
             {isTextAreaDisabled ? (
                 <div>Agradecemos o feedback!</div>
             ) : (

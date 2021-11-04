@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch, useRouteMatch } from 'react-router'
+import { Redirect, Route, Switch, useHistory, useRouteMatch } from 'react-router'
 
 import TeacherApp from 'components/organisms/TeacherApp'
 
@@ -10,6 +10,10 @@ import TeacherMessages from 'layouts/TeacherMessages'
 
 const TeacherPage: React.FC = () => {
     const { path } = useRouteMatch()
+    const history = useHistory()
+    if (history.location.pathname.endsWith('teacher-app')) {
+        return <Redirect to={`${path}/lessons`} />
+    }
     return (
         <TeacherApp>
             <Switch>

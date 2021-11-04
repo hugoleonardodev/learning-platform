@@ -115,6 +115,11 @@ export const TeacherDropdownToggle = styled(DropdownToggle)`
     #my-face-icon :nth-child(2) {
         fill: ${properties => properties.theme.colors.text};
     }
+    #person-icon {
+        background-color: ${properties => properties.theme.colors.primary.main};
+        border-radius: 100px;
+        box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
+    }
     &:hover {
         #my-face-icon :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};

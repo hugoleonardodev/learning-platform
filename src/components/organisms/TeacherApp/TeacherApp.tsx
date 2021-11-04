@@ -5,7 +5,7 @@ import TeacherHeader from 'components/molecules/TeacherHeader'
 
 import { fixedUrl } from 'common/functions'
 
-import { ReactComponent as DashboardIcon } from 'common/assets/dashboard.svg'
+// import { ReactComponent as DashboardIcon } from 'common/assets/dashboard.svg'
 import { ReactComponent as ProfileIcon } from 'common/assets/profile.svg'
 import { ReactComponent as LessonsIcon } from 'common/assets/lessons.svg'
 
@@ -30,14 +30,13 @@ const TeacherApp: React.FC = ({ children }) => {
             <TeacherHeader toggleSideMenu={toggleSideMenu} sideMenu={sideMenu} selectedItem={selectedItem} />
             <MainContent sideMenu={sideMenu}>
                 <VertSideNav>
-                    <VertSideNavLink to={`${fixedUrl(url)}/`} isselected={selectedItem === ''}>
+                    {/* <VertSideNavLink to={`${fixedUrl(url)}/`} isselected={selectedItem === ''}>
                         <VertSideNavItem isselected={selectedItem === ''}>
                             <DashboardIcon />
                             Home
                         </VertSideNavItem>
                         <VertSideNavItemSelector isselected={selectedItem === ''} />
-                    </VertSideNavLink>
-                    <div className="divider" />
+                    </VertSideNavLink> */}
                     <VertSideNavLink to={`${fixedUrl(url)}/lessons`} isselected={selectedItem === 'lessons'}>
                         <VertSideNavItem isselected={selectedItem === 'lessons'}>
                             <LessonsIcon />

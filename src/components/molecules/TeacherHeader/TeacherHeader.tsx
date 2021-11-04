@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouteMatch } from 'react-router'
+// import { useRouteMatch } from 'react-router'
 
 import {
     TeacherDropdownItem,
@@ -11,21 +11,22 @@ import {
     TeacherNavBrand,
     TeacherNavBrandLogo,
     TeacherNavCollapse,
-    TeacherNavItem,
+    // TeacherNavItem,
     TeacherNavLink,
-    TeacherNavLinkButton,
+    // TeacherNavLinkButton,
     TeacherUncontrolledDropdown,
 } from './factory.styles'
 
 import { ReactComponent as HamburgerIcon } from 'common/assets/hamburger.svg'
 import { ReactComponent as MenuListIcon } from 'common/assets/menu_list.svg'
-import { ReactComponent as NotificationsIcon } from 'common/assets/notifications.svg'
-import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
+// import { ReactComponent as NotificationsIcon } from 'common/assets/notifications.svg'
+// import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
 import { ReactComponent as PersonIcon } from 'common/assets/person.svg'
 
 import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'
-import ToggleSwitch from 'components/atoms/ToggleSwitch'
-import { fixedUrl } from 'common/functions'
+import { useHistory } from 'react-router'
+// import ToggleSwitch from 'components/atoms/ToggleSwitch'
+// import { fixedUrl } from 'common/functions'
 
 type TeacherHeaderProperties = {
     sideMenu: boolean
@@ -38,10 +39,11 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
     toggleSideMenu,
     sideMenu,
     // setSelectedItem,
-    selectedItem,
+    // selectedItem,
 }) => {
     const [isOpen, setIsOpen] = React.useState(false)
-    const { url } = useRouteMatch()
+    // const { url } = useRouteMatch()
+    const history = useHistory()
     return (
         <TeacherHeaderContainer>
             <TeacherNavBar expand="md">
@@ -57,30 +59,30 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                 </TeacherNavLink>
                 <TeacherNavCollapse isOpen={isOpen} navbar>
                     <TeacherNav className="me-auto" navbar>
-                        <TeacherNavItem>
+                        {/* <TeacherNavItem>
                             <ToggleSwitch />
-                        </TeacherNavItem>
-                        <TeacherNavItem>
+                        </TeacherNavItem> */}
+                        {/* <TeacherNavItem>
                             <TeacherNavLinkButton
                                 to={`${fixedUrl(url)}/messages`}
                                 isselected={selectedItem === 'messages'}
                             >
                                 <NotificationsIcon id="notifications-icon" />
                             </TeacherNavLinkButton>
-                        </TeacherNavItem>
-                        <TeacherNavItem>
+                        </TeacherNavItem> */}
+                        {/* <TeacherNavItem>
                             <TeacherNavLink>
                                 <FullScreenIcon id="full-screen-icon" />
                             </TeacherNavLink>
-                        </TeacherNavItem>
+                        </TeacherNavItem> */}
                         <TeacherUncontrolledDropdown inNavbar nav>
                             <TeacherDropdownToggle nav>
                                 <PersonIcon id="person-icon" />
                             </TeacherDropdownToggle>
                             <TeacherDropdownMenu end>
-                                <TeacherDropdownItem>Perfil</TeacherDropdownItem>
+                                {/* <TeacherDropdownItem>Perfil</TeacherDropdownItem> */}
                                 <TeacherDropdownItem divider />
-                                <TeacherDropdownItem>Sair</TeacherDropdownItem>
+                                <TeacherDropdownItem onClick={() => history.push('/')}>Sair</TeacherDropdownItem>
                             </TeacherDropdownMenu>
                         </TeacherUncontrolledDropdown>
                     </TeacherNav>
