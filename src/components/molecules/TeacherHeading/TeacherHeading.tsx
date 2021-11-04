@@ -1,7 +1,5 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
 import { useRouteMatch } from 'react-router'
-// import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 import {
     TeacherBreadcrumb,
@@ -23,28 +21,23 @@ type TeacherHeadingProperties = {
 
 const TeacherHeading: React.FC<TeacherHeadingProperties> = ({ sectionTitle, sectionLinks }) => {
     const { url } = useRouteMatch()
-    // const teacherLessons = useSelector((state: RootStateWithReducers) => state.teachers.teacherLessons)
-    // const [totalQuestions, setTotalQuestions] = React.useState(0)
     const totalQuestions = React.useRef(0)
     const totalLessons = React.useRef(0)
 
     const locationPath = window.location.pathname
-    console.log(locationPath)
-
     const arrayString = locationPath.split('/')
+    const LENGTH_ENDS_WITH_QUESTION = 37
     const locationString =
-        locationPath.endsWith('question', 37) || locationPath.endsWith('result')
-            ? arrayString[arrayString.length - 2]
+        locationPath.endsWith('question', LENGTH_ENDS_WITH_QUESTION) || locationPath.endsWith('result')
+            ? arrayString[arrayString.length - __TWO__]
             : arrayString[arrayString.length - 1]
     const lessonPosition = Number.parseInt(locationString[locationString.length - 1])
-    console.log('TeacherHeading lessonPosition', lessonPosition)
 
-    const getAllLessonSectionLinks = (breadcrumbTitle: string, breadcrumbLinks: SectionLink[]) => {
-        console.log('TeacherHeading breadcrumbTitle', breadcrumbTitle)
-
+    const getAllLessonSectionLinks = (_breadcrumbTitle: string, breadcrumbLinks: SectionLink[]) => {
         const fixedArrayLinks = [...breadcrumbLinks.slice(0, -1)]
 
         totalLessons.current = lessonPosition
+
         for (let lessonsCount = 1; lessonsCount <= lessonPosition; lessonsCount++) {
             fixedArrayLinks.push({ linkTitle: `Lesson${lessonsCount}`, linkPath: `/lesson${lessonsCount}` })
         }
@@ -53,16 +46,12 @@ const TeacherHeading: React.FC<TeacherHeadingProperties> = ({ sectionTitle, sect
 
     const fixedBreadcrumbPath = (breadcrumbTitle: string, breadcrumbLinks: SectionLink[]) => {
         if (breadcrumbTitle.startsWith('Lesson')) {
-            console.log('entrou no lesson')
-
             const fixedArrayLinks = [...breadcrumbLinks]
-            console.log('lesson fixedArrayLinks', fixedArrayLinks)
 
             totalLessons.current = lessonPosition
-            console.log(totalLessons.current)
-            console.log(lessonPosition)
 
             lessonPosition && fixedArrayLinks.pop()
+
             for (let lessonsCount = 1; lessonsCount <= totalLessons.current; lessonsCount++) {
                 fixedArrayLinks.push({ linkTitle: `Lesson${lessonsCount}`, linkPath: `/lesson${lessonsCount}` })
             }

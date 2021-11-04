@@ -78,6 +78,16 @@ export const teacherIsAproved = (isAproved: boolean): TeacherIsAproved => ({
     payload: isAproved,
 })
 
+export interface TeacherSubmitFeedback {
+    type: TeachersDataActionTypes.TEACHER_SUBMIT_FEEDBACK
+    payload: string
+}
+
+export const teacherSubmitFeedback = (feedback: string): TeacherSubmitFeedback => ({
+    type: TeachersDataActionTypes.TEACHER_SUBMIT_FEEDBACK,
+    payload: feedback,
+})
+
 export type TeacherActionsCreators =
     | TeacherEmailLoginAction
     | TeacherStartingCourseAction
@@ -87,3 +97,4 @@ export type TeacherActionsCreators =
     | TeacherClearCurrentAnswers
     | TeacherUpdateCompleteLesssons
     | TeacherIsAproved
+    | TeacherSubmitFeedback

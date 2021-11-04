@@ -6,7 +6,6 @@ import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 const WizardResult: React.FC = () => {
     const currentAnswers = useSelector((state: RootStateWithReducers) => state.teachers.currentAnswers)
-    console.log(currentAnswers)
 
     const teacherLessons = useSelector((state: RootStateWithReducers) => state.teachers.teacherLessons)
     const { path } = useRouteMatch()
@@ -15,7 +14,6 @@ const WizardResult: React.FC = () => {
     const lessonString = pathArray[pathArray.length - __TWO__]
     const lessonPosition = Number.parseInt(lessonString[lessonString.length - 1])
     const correctAnswers = teacherLessons[lessonPosition - 1].videoQuestions.map(({ correct }) => correct).sort()
-    console.log(correctAnswers)
 
     return (
         <div>

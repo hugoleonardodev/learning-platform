@@ -13,6 +13,7 @@ const initialState = {
     switchTheme: false,
     completedLessons: [],
     currentAnswers: [],
+    teacherFeedback: '',
     teacherLessons: [
         {
             lessonId: 'teacher-lesson-1',
@@ -104,6 +105,11 @@ const teachersDataReducer = (
             return {
                 ...state,
                 completedLessons: [...state.completedLessons, action.payload],
+            }
+        case TeachersDataActionTypes.TEACHER_SUBMIT_FEEDBACK:
+            return {
+                ...state,
+                teacherFeedback: action.payload,
             }
         default:
             return state

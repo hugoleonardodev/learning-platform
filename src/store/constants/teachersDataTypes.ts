@@ -19,6 +19,7 @@ export enum TeachersDataActionTypes {
     TEACHER_CLEAR_CURRENT_ANSWERS = 'TEACHER_CLEAR_CURRENT_ANSWERS',
     TEACHER_UPDATE_COMPLETED_LESSONS = 'TEACHER_UPDATE_COMPLETED_LESSONS',
     TEACHER_IS_APROVED = 'TEACHER_IS_APROVED',
+    TEACHER_SUBMIT_FEEDBACK = 'TEACHER_SUBMIT_FEEDBACK',
 }
 
 /**
@@ -57,4 +58,5 @@ export interface TeacherDataState {
     completedLessons: string[]
     currentAnswers: string[]
     teacherLessons: TeacherLesson[]
+    teacherFeedback: string
 }
