@@ -99,6 +99,6 @@ export const MainSection = styled.section<MainSectionProperties>`
     transition: min-width 0.6s ease;
     transform: ${properties => (properties.sideMenu ? 'translateX(-64px)' : 'translateX(0)')};
     @media only screen and (max-width: 769px) {
-        transform: ${properties => (properties.sideMenu ? 'translateX(-88px)' : 'translateX(-44px)')};
+        transform: ${properties => (properties.sideMenu ? 'translate(-88px, -16px)' : 'translate(-44px, -16px)')};
     }
 `
