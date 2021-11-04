@@ -2,12 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled, { ThemeProvider } from 'styled-components'
 import { ConnectedRouter } from 'connected-react-router'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import darkTheme from 'common/themes/darkTheme'
 import defaultTheme from 'common/themes/defaultTheme'
 
-// import HomePage from 'pages/HomePage'
+import HomePage from 'pages/HomePage'
 import TeacherPage from 'pages/TeacherPage'
 
 import { history } from './store'
@@ -26,7 +26,7 @@ const Routes: React.FC = () => {
                 <ConnectedRouter history={history}>
                     <Switch>
                         <Route exact path="/">
-                            <Redirect to="/teacher-app/lessons" />
+                            <HomePage />
                         </Route>
                         <Route path="/teacher-app">
                             <TeacherPage />
