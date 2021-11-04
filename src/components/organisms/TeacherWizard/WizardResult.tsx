@@ -16,11 +16,10 @@ const WizardResult: React.FC = () => {
     const correctAnswers = teacherLessons[lessonPosition - 1].videoQuestions.map(({ correct }) => correct).sort()
 
     return (
-        <div>
-            <h2>Lesson result</h2>
-            {currentAnswers.join('') === correctAnswers.join('') ? <div>is aproved</div> : <div>not passed</div>}
+        <>
+            <h2>{`Lesson${lessonPosition}`} result</h2>
             <TeacherResult teacherIsAproved={currentAnswers.sort().join('') === correctAnswers.sort().join('')} />
-        </div>
+        </>
     )
 }
 
