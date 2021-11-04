@@ -31,7 +31,7 @@ const TeacherWizard: React.FC = () => {
     return (
         <Switch>
             <Route exact path={path}>
-                <TeacherHeading sectionTitle="Lesson1" sectionLinks={teacherHomeSectionLinks} />
+                <TeacherHeading sectionTitle={`Lesson${lessonPosition}`} sectionLinks={teacherHomeSectionLinks} />
                 <VideoPlayer />
             </Route>
             {videoQuestions.map((question, index) => (
