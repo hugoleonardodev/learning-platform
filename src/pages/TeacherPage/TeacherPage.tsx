@@ -3,7 +3,7 @@ import { Redirect, Route, Switch, useHistory, useRouteMatch } from 'react-router
 
 import TeacherApp from 'components/organisms/TeacherApp'
 
-import TeacherHome from 'layouts/TeacherHome'
+// import TeacherHome from 'layouts/TeacherHome'
 import TeacherLessons from 'layouts/TeacherLessons'
 import TeacherProfile from 'layouts/TeacherProfile'
 import TeacherMessages from 'layouts/TeacherMessages'
@@ -18,7 +18,7 @@ const TeacherPage: React.FC = () => {
         <TeacherApp>
             <Switch>
                 <Route exact path={path}>
-                    <TeacherHome />
+                    <Redirect to="/teacher-app/lessons" />
                 </Route>
                 <Route path={`${path}/lessons`}>
                     <TeacherLessons />

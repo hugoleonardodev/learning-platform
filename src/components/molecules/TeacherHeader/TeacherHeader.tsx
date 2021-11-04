@@ -50,7 +50,7 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                 <TeacherNavLink onClick={() => toggleSideMenu(!sideMenu)}>
                     <HamburgerIcon />
                 </TeacherNavLink>
-                <TeacherNavBrand to="/" className="navbar-brand">
+                <TeacherNavBrand to="/teacher-app/lessons" className="navbar-brand">
                     <TeacherNavBrandLogo src={TimeToPlayLogo} alt="Time To Play" />
                     TIME TO PLAY
                 </TeacherNavBrand>
