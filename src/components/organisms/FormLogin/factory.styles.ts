@@ -13,24 +13,29 @@ export const FormLoginTitle = styled.h4`
     background: ${properties => properties.theme.colors.background};
 `
 
+export const FormLoginInputContainer = styled.div`
+    min-height: 80px;
+    max-width: calc(132px + 26vw);
+`
+
 export const FormLoginLabel = styled(Label)`
-    transform: translate(16px, -32px);
+    transform: translate(16px, 30px);
     transition: ease-in-out 0.15s;
-    position: absolute;
+    position: relative;
     color: ${properties => properties.theme.colors.grey.main};
     background: ${properties => properties.theme.colors.background};
 `
 
 export const FormLoginGroup = styled(FormGroup)`
     .is-valid + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
+        transform: translate(16px, -14px);
         font-size: 14px;
         background: ${properties => properties.theme.colors.background};
         padding: 0 8px 0 8px;
         color: ${properties => properties.theme.colors.primary.main};
     }
     .is-invalid + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
+        transform: translate(16px, -14px);
         font-size: 14px;
         background: ${properties => properties.theme.colors.background};
         padding: 0 8px 0 8px;
@@ -39,10 +44,13 @@ export const FormLoginGroup = styled(FormGroup)`
 `
 
 export const FormLoginEmailInput = styled.input`
+    z-index: 1;
     border-radius: 100px;
     margin-top: 24px;
+    position: absolute;
     color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    background: transparent;
+    max-width: calc(132px + 26vw);
     &:focus {
         color: #212529;
         border-color: rgb(0 166 156 / 25%);
@@ -50,7 +58,9 @@ export const FormLoginEmailInput = styled.input`
         box-shadow: 0 0 0 0.25rem rgb(0 166 156 / 25%);
     }
     &:focus + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
+        transform: translate(16px, 12px);
+        position: absolute;
+        z-index: 2;
         font-size: 14px;
         background: white;
         padding: 0 8px 0 8px;
@@ -59,10 +69,13 @@ export const FormLoginEmailInput = styled.input`
 `
 
 export const FormLoginPasswordInput = styled.input`
+    position: absolute;
+    z-index: 1;
     border-radius: 100px;
     margin-top: 24px;
     color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    background: transparent;
+    max-width: calc(132px + 26vw);
     &:focus {
         color: #212529;
         background-color: #fff;
@@ -71,14 +84,18 @@ export const FormLoginPasswordInput = styled.input`
         box-shadow: 0 0 0 0.25rem rgb(0 166 156 / 25%);
     }
     &:focus + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
+        transform: translate(16px, 12px);
+        position: absolute;
+        z-index: 2;
         font-size: 14px;
         background: white;
         padding: 0 8px 0 8px;
         color: ${properties => properties.theme.colors.primary.main};
     }
     &:active + ${FormLoginLabel} {
-        transform: translate(16px, -56px);
+        transform: translate(16px, 12px);
+        position: absolute;
+        z-index: 2;
         font-size: 14px;
         background: white;
         padding: 0 8px 0 8px;
@@ -96,6 +113,7 @@ export const FormLoginBtnsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding-bottom: 16px;
+    max-width: calc(132px + 26vw);
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background};
 `

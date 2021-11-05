@@ -12,6 +12,7 @@ import {
     FormLoginEmailInput,
     FormLoginFeedback,
     FormLoginGroup,
+    FormLoginInputContainer,
     FormLoginLabel,
     FormLoginTitle,
 } from './factory.styles'
@@ -51,8 +52,10 @@ const ForgotPassword: React.FC<FormLoginProperties> = ({ setForgotPassword }) =>
         <FormLoginContainer onSubmit={handleSubmit(onSubmit)}>
             <FormLoginGroup>
                 <FormLoginTitle>Esqueceu a senha</FormLoginTitle>
-                <FormLoginEmailInput type="email" className={emailClasses} tabIndex={0} {...register('email')} />
-                <FormLoginLabel htmlFor="email">E-mail</FormLoginLabel>
+                <FormLoginInputContainer>
+                    <FormLoginEmailInput type="email" className={emailClasses} tabIndex={0} {...register('email')} />
+                    <FormLoginLabel htmlFor="email">E-mail</FormLoginLabel>
+                </FormLoginInputContainer>
                 {emailFieldHasError ? <FormLoginFeedback>E-mail inválido</FormLoginFeedback> : <div />}
             </FormLoginGroup>
             <FormLoginBtnsContainer>
