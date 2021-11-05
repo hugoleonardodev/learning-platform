@@ -28,14 +28,18 @@ export const FormLoginLabel = styled(Label)`
 
 export const FormLoginGroup = styled(FormGroup)`
     .is-valid + ${FormLoginLabel} {
-        transform: translate(16px, -14px);
+        position: absolute;
+        z-index: 2;
+        transform: translate(16px, 12px);
         font-size: 14px;
         background: ${properties => properties.theme.colors.background};
         padding: 0 8px 0 8px;
         color: ${properties => properties.theme.colors.primary.main};
     }
     .is-invalid + ${FormLoginLabel} {
-        transform: translate(16px, -14px);
+        position: absolute;
+        z-index: 2;
+        transform: translate(16px, 12px);
         font-size: 14px;
         background: ${properties => properties.theme.colors.background};
         padding: 0 8px 0 8px;
