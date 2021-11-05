@@ -5,6 +5,8 @@ import store from './store'
 
 import Routes from './Routes'
 
+import './App.scss'
+
 const App: React.FC = () => {
     return (
         <Provider store={store}>

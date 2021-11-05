@@ -2,6 +2,7 @@ const path = require('path')
 // const fs = require('fs')
 const webpack = require('webpack')
 const dotenv = require('dotenv')
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 // const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin')
 // const package_ = require('./package.json')
@@ -20,6 +21,11 @@ const config = {
     optimization: {
         runtimeChunk: 'single',
         moduleIds: 'deterministic',
+        minimizer: [
+            // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+            `...`,
+            // new CssMinimizerPlugin(),
+        ],
     },
     target: 'web',
     cache: true,
