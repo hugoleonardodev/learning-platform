@@ -1,7 +1,11 @@
 import React from 'react'
 import { EditorContentProps } from '@tiptap/react'
 
-import { TeacherFeedbackButtonGroup, TeacherFeedbackMenuButton } from './factory.styles'
+import {
+    TeacherFeedbackButtonGroup,
+    TeacherFeedbackMenuButton,
+    TeacherFeedbackMenuButtonClearMobile,
+} from './factory.styles'
 
 import { ReactComponent as BoldIcon } from 'common/assets/bold.svg'
 import { ReactComponent as ItalicIcon } from 'common/assets/italic.svg'
@@ -10,6 +14,7 @@ import { ReactComponent as BulletListIcon } from 'common/assets/bullet_list.svg'
 import { ReactComponent as OrderedListIcon } from 'common/assets/ordered_list.svg'
 import { ReactComponent as UndoIcon } from 'common/assets/undo.svg'
 import { ReactComponent as RedoIcon } from 'common/assets/redo.svg'
+import { ReactComponent as ClearIcon } from 'common/assets/clear.svg'
 
 export const BoldItalicUnderline: React.FC<EditorContentProps> = ({ editor }) => {
     if (!editor) {
@@ -37,6 +42,13 @@ export const BoldItalicUnderline: React.FC<EditorContentProps> = ({ editor }) =>
             >
                 <StrikeIcon />
             </TeacherFeedbackMenuButton>
+
+            <TeacherFeedbackMenuButtonClearMobile
+                onClick={() => editor.chain().focus().clearContent().run()}
+                isclearbutton={'true'}
+            >
+                <ClearIcon />
+            </TeacherFeedbackMenuButtonClearMobile>
         </TeacherFeedbackButtonGroup>
     )
 }

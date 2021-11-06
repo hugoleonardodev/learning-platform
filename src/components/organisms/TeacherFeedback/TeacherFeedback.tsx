@@ -1,11 +1,13 @@
+import StarterKit from '@tiptap/starter-kit'
 import { useEditor, EditorContent, EditorContentProps } from '@tiptap/react'
 import React from 'react'
-import StarterKit from '@tiptap/starter-kit'
+import { useDispatch, useSelector } from 'react-redux'
 
 import {
     TeacherFeedbackButtonsToolbar,
     TeacherFeedbackContainer,
-    TeacherFeedbackMenuButton,
+    // TeacherFeedbackMenuButton,
+    TeacherFeedbackMenuButtonClear,
     TeacherFeedbackSubmitButton,
     TeacherFeedbackSubTitle,
     TeacherFeedbackTitle,
@@ -14,7 +16,6 @@ import {
 import { BoldItalicUnderline, OrderedAndUnorderedLists, TextOptions, UndoAndRedo } from './ButtonGroups'
 
 import { ReactComponent as ClearIcon } from 'common/assets/clear.svg'
-import { useDispatch, useSelector } from 'react-redux'
 import { teacherSubmitFeedback } from 'store/actions/teachersActions'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
@@ -29,16 +30,16 @@ const MenuBar: React.FC<EditorContentProps> = ({ editor }) => {
 
             <TextOptions editor={editor} />
 
-            <OrderedAndUnorderedLists editor={editor} />
-
             <UndoAndRedo editor={editor} />
 
-            <TeacherFeedbackMenuButton
+            <OrderedAndUnorderedLists editor={editor} />
+
+            <TeacherFeedbackMenuButtonClear
                 onClick={() => editor.chain().focus().clearContent().run()}
                 isclearbutton={'true'}
             >
                 <ClearIcon />
-            </TeacherFeedbackMenuButton>
+            </TeacherFeedbackMenuButtonClear>
         </TeacherFeedbackButtonsToolbar>
     )
 }

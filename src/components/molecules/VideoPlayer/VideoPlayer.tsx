@@ -111,7 +111,9 @@ const VideoPlayer: React.FC = () => {
                     <h2>Parabéns, você concluiu o treinamento 0{positionNumber}.</h2>
                     <h2>Você deseja:</h2>
                     <VideoPlayerFinishedButtonsContainer>
-                        <VideoPlayerButton onClick={handleRestartLesson}>Rever a lição</VideoPlayerButton>
+                        <VideoPlayerButton onClick={handleRestartLesson} playagain="true">
+                            Rever a lição
+                        </VideoPlayerButton>
                         <VideoPlayerButton onClick={handleStartQuiz}>Iniciar Questionário</VideoPlayerButton>
                     </VideoPlayerFinishedButtonsContainer>
                 </VideoPlayerFinishedLessonContainer>

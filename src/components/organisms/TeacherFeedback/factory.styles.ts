@@ -27,12 +27,16 @@ export const TeacherFeedbackTitle = styled.h2`
     }
 `
 
-export const TeacherFeedbackSubTitle = styled.h3``
+export const TeacherFeedbackSubTitle = styled.h3`
+    @media only screen and (max-width: 769px) {
+        font-size: calc(0.925rem + 0.9vw);
+    }
+`
 
 export const TeacherFeedbackMenuButtonContainer = styled.div``
 
 export const TeacherFeedbackButtonsToolbar = styled(ButtonToolbar)`
-    justify-content: center;
+    justify-content: space-evenly;
 `
 
 export const TeacherFeedbackButtonGroup = styled(ButtonGroup)``
@@ -47,42 +51,98 @@ export const TeacherFeedbackMenuButton = styled(Button)<TeacherFeedbackMenuButto
     margin: 32px 0;
     text-transform: uppercase;
     box-shadow: 0 1px 2px 0 rgba(0, 47, 38, 0.15), 0 1px 3px 1px rgba(0, 47, 38, 0.15);
-    background-color: ${properties =>
-        properties.isclearbutton ? properties.theme.colors.secondary.main : properties.theme.colors.primary.main};
-    border-color: ${properties =>
-        properties.isclearbutton ? properties.theme.colors.secondary.main : properties.theme.colors.primary.main};
+    background-color: ${properties => properties.theme.colors.primary.main};
+    border-color: ${properties => properties.theme.colors.primary.main};
     svg :nth-child(2) {
         fill: ${properties => properties.theme.colors.background};
     }
     &:hover {
-        background-color: ${properties =>
-            properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
-        border-color: ${properties =>
-            properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
+        background-color: ${properties => properties.theme.colors.primary.dark};
+        border-color: ${properties => properties.theme.colors.primary.dark};
     }
     &:focus {
         color: #fff;
-        background-color: ${properties =>
-            properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
-        border-color: ${properties =>
-            properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
-        box-shadow: ${properties =>
-            properties.isclearbutton ? '0 0 0 0.25rem rgb(155 055 055 / 25%)' : '0 0 0 0.25rem rgb(0 166 156 / 25%)'};
+        background-color: ${properties => properties.theme.colors.primary.dark};
+        border-color: ${properties => properties.theme.colors.primary.dark};
+        box-shadow: 0 0 0 0.25rem rgb(0 166 156 / 25%);
     }
     &:focus:active {
-        box-shadow: ${properties =>
-            properties.isclearbutton ? '0 0 0 0.25rem rgb(155 055 055 / 25%)' : '0 0 0 0.25rem rgb(0 166 156 / 25%)'};
+        box-shadow: 0 0 0 0.25rem rgb(0 166 156 / 25%);
     }
     &.is-active {
-        background-color: ${properties =>
-            properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
-        border-color: ${properties =>
-            properties.isclearbutton ? properties.theme.colors.secondary.dark : properties.theme.colors.primary.dark};
-        box-shadow: ${properties =>
-            properties.isclearbutton ? '0 0 0 0.25rem rgb(155 055 055 / 25%)' : '0 0 0 0.25rem rgb(0 166 156 / 25%)'};
+        background-color: ${properties => properties.theme.colors.primary.dark};
+        border-color: ${properties => properties.theme.colors.primary.dark};
+        box-shadow: 0 0 0 0.25rem rgb(0 166 156 / 25%);
     }
     @media only screen and (max-width: 769px) {
         margin: 4px 0;
+    }
+`
+
+export const TeacherFeedbackMenuButtonClearMobile = styled(Button)`
+    border-radius: 100px;
+    min-width: 60px;
+    margin: 32px 0;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px 0 rgba(0, 47, 38, 0.15), 0 1px 3px 1px rgba(0, 47, 38, 0.15);
+    background-color: ${properties => properties.theme.colors.secondary.main};
+    border-color: ${properties => properties.theme.colors.secondary.main};
+    svg :nth-child(2) {
+        fill: ${properties => properties.theme.colors.background};
+    }
+    &:hover {
+        background-color: ${properties => properties.theme.colors.secondary.dark};
+        border-color: ${properties => properties.theme.colors.secondary.dark};
+    }
+    &:focus {
+        color: #fff;
+        background-color: ${properties => properties.theme.colors.secondary.dark};
+        border-color: ${properties => properties.theme.colors.secondary.dark};
+        box-shadow: 0 0 0 0.25rem rgb(155 055 055 / 25%);
+    }
+    &:focus:active {
+        box-shadow: 0 0 0 0.25rem rgb(155 055 055 / 25%);
+    }
+    &.is-active {
+        background-color: ${properties => properties.theme.colors.secondary.dark};
+        border-color: ${properties => properties.theme.colors.secondary.dark};
+        box-shadow: 0 0 0 0.25rem rgb(155 055 055 / 25%);
+    }
+    @media only screen and (max-width: 769px) {
+        margin: 4px 0;
+    }
+`
+export const TeacherFeedbackMenuButtonClear = styled(Button)`
+    border-radius: 100px;
+    min-width: 60px;
+    margin: 32px 0;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px 0 rgba(0, 47, 38, 0.15), 0 1px 3px 1px rgba(0, 47, 38, 0.15);
+    background-color: ${properties => properties.theme.colors.secondary.main};
+    border-color: ${properties => properties.theme.colors.secondary.main};
+    svg :nth-child(2) {
+        fill: ${properties => properties.theme.colors.background};
+    }
+    &:hover {
+        background-color: ${properties => properties.theme.colors.secondary.dark};
+        border-color: ${properties => properties.theme.colors.secondary.dark};
+    }
+    &:focus {
+        color: #fff;
+        background-color: ${properties => properties.theme.colors.secondary.dark};
+        border-color: ${properties => properties.theme.colors.secondary.dark};
+        box-shadow: 0 0 0 0.25rem rgb(155 055 055 / 25%);
+    }
+    &:focus:active {
+        box-shadow: 0 0 0 0.25rem rgb(155 055 055 / 25%);
+    }
+    &.is-active {
+        background-color: ${properties => properties.theme.colors.secondary.dark};
+        border-color: ${properties => properties.theme.colors.secondary.dark};
+        box-shadow: 0 0 0 0.25rem rgb(155 055 055 / 25%);
+    }
+    @media only screen and (max-width: 769px) {
+        display: none;
     }
 `
 
