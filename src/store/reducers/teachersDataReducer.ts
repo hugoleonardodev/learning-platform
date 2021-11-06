@@ -1,6 +1,8 @@
 import { TeacherActionsCreators, TeacherDataState, TeachersDataActionTypes } from 'store/constants/teachersDataTypes'
 
-const initialState = {
+type TeacherInitialState = TeacherDataState
+
+const initialState: TeacherInitialState = {
     teacherEmail: 'toasty@sphinx.net',
     teacherName: 'toasty',
     teacherIsAproved: false,
@@ -14,6 +16,14 @@ const initialState = {
     completedLessons: [],
     currentAnswers: [],
     teacherFeedback: '',
+    teacherMessages: [
+        {
+            messageTitle: 'Bem vindo a plataforma!',
+            messageAuthor: 'system',
+            messageSubTitle: 'A melhor metodologia do Brasil.',
+            messageContent: 'Estamos muito felizes que tenha escolhido aprender e ensinar com a gente.',
+        },
+    ],
     teacherLessons: [
         {
             lessonId: 'teacher-lesson-1',

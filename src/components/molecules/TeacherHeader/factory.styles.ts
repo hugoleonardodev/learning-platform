@@ -20,7 +20,7 @@ export const TeacherHeaderContainer = styled.header`
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 28px;
-    background: ${properties => properties.theme.colors.background};
+    background: ${properties => properties.theme.colors.background.light};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
 `
 
@@ -32,10 +32,10 @@ export const TeacherNavBrand = styled(Link)`
     width: 78vw;
     display: flex;
     justify-content: center;
-    color: ${properties => properties.theme.colors.text};
+    color: ${properties => properties.theme.colors.text.main};
     background: ${properties => properties.theme.colors.background};
     &:hover {
-        color: ${properties => properties.theme.colors.primary.main};
+        color: ${properties => properties.theme.colors.primary.dark};
     }
     @media only screen and (max-width: 769px) {
         width: 50vw;
@@ -57,9 +57,16 @@ export const TeacherNav = styled(Nav)`
     justify-content: flex-end;
 `
 
-export const TeacherNavItem = styled(NavItem)`
+type TeacherNavItemProperties = {
+    fullscreen?: boolean | string
+}
+
+export const TeacherNavItem = styled(NavItem)<TeacherNavItemProperties>`
     display: flex;
     align-items: center;
+    @media only screen and (max-width: 769px) {
+        margin-right: ${properties => properties.fullscreen === 'true' && '8px'};
+    }
 `
 
 type TeacherNavLinkButtonProperties = {
@@ -68,12 +75,14 @@ type TeacherNavLinkButtonProperties = {
 }
 
 export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkButtonProperties>`
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.text.light};
+    background: ${properties => properties.theme.colors.background.main};
     cursor: pointer;
     #notifications-icon :nth-child(2) {
         fill: ${properties =>
-            properties.isselected ? properties.theme.colors.primary.main : properties => properties.theme.colors.text};
+            properties.isselected
+                ? properties.theme.colors.primary.main
+                : properties => properties.theme.colors.text.dark};
     }
     &:hover {
         #notifications-icon :nth-child(2) {
@@ -87,20 +96,32 @@ export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkButtonProperties>
 
 type TeacherNavLinkProperties = {
     istoggle?: boolean
+    ismenu?: boolean | string
 }
 
 export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    /* color: ${properties => properties.theme.colors.text.light};
+    background: ${properties => properties.theme.colors.background.light}; */
     cursor: pointer;
+    margin-right: ${properties => properties.ismenu === 'true' && '8px'};
+    #hamburger-icon :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text.light};
+    }
 
     #full-screen-icon :nth-child(2) {
-        fill: ${properties => properties.theme.colors.text};
+        fill: ${properties => properties.theme.colors.text.light};
+    }
+
+    #menu-list-icon :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text.light};
     }
 
     &:hover {
+        #hamburger :nth-child(2) {
+            fill: ${properties => properties.theme.colors.primary.light};
+        }
         #full-screen-icon :nth-child(2) {
-            fill: ${properties => properties.theme.colors.primary.main};
+            fill: ${properties => properties.theme.colors.primary.light};
         }
     }
 
@@ -110,35 +131,74 @@ export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
 `
 
 export const TeacherDropdownToggle = styled(DropdownToggle)`
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
-    #my-face-icon :nth-child(2) {
+    /* color: ${properties => properties.theme.colors.text}; */
+    /* background: ${properties => properties.theme.colors.background}; */
+    /* #my-face-icon :nth-child(2) {
         fill: ${properties => properties.theme.colors.text};
-    }
+    } */
+    display: flex;
     #person-icon {
         background-color: ${properties => properties.theme.colors.primary.main};
         border-radius: 100px;
         box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
     }
-    &:hover {
-        #my-face-icon :nth-child(2) {
+    #person-icon :nth-child(2) {
+        fill: ${properties => properties.theme.colors.background.main};
+    }
+    #notifications-icon :nth-child(2) {
+        fill: ${properties => properties.theme.colors.text.light};
+    }
+    /* &:hover {
+        #person-icon :nth-child(2) {
             fill: ${properties => properties.theme.colors.primary.main};
         }
-    }
+    } */
     @media only screen and (max-width: 769px) {
         margin-right: 8px;
     }
 `
 
 export const TeacherUncontrolledDropdown = styled(UncontrolledDropdown)`
+    /* color: ${properties => properties.theme.colors.text};
+    background: ${properties => properties.theme.colors.background}; */
+    display: flex;
+    align-items: center;
+`
+
+export const TeacherMessagesUncontrolledDropdown = styled(UncontrolledDropdown)`
     color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    /* background: ${properties => properties.theme.colors.background}; */
+    display: flex;
+    align-items: center;
+`
+
+export const TeacherMessagesDropdownMenu = styled(DropdownMenu)`
+    transform: translate(-114px, 72px);
+    /* color: ${properties => properties.theme.colors.text.light}; */
+    background: ${properties => properties.theme.colors.background.light};
+    &:hover {
+        #person-icon :nth-child(2) {
+            fill: ${properties => properties.theme.colors.primary.main};
+        }
+    }
+    @media only screen and (max-width: 769px) {
+        position: absolute !important;
+    }
+`
+
+export const TeacherMessagesBadge = styled.span`
+    color: ${properties => properties.theme.colors.text.light};
 `
 
 export const TeacherDropdownMenu = styled(DropdownMenu)`
-    transform: translateX(-116px);
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    transform: translate(-114px, 94px);
+    /* color: ${properties => properties.theme.colors.text.light}; */
+    background: ${properties => properties.theme.colors.background.light};
+    &:hover {
+        #person-icon :nth-child(2) {
+            fill: ${properties => properties.theme.colors.primary.main};
+        }
+    }
     @media only screen and (max-width: 769px) {
         position: absolute !important;
     }
@@ -149,17 +209,25 @@ type TeacherDropdownItemProperties = {
 }
 
 export const TeacherDropdownItem = styled(DropdownItem)<TeacherDropdownItemProperties>`
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.text.light};
+    background: ${properties => properties.theme.colors.background.light};
     &:hover {
+        color: ${properties =>
+            properties.theme.isDark ? properties.theme.colors.background.light : properties.theme.colors.primary.text};
         background: ${properties =>
             properties.divider
-                ? properties => properties.theme.colors.background
+                ? properties => properties.theme.colors.background.light
                 : properties.theme.colors.primary.light};
     }
 `
 
+export const TeacherDropdownItemHeader = styled.span`
+    padding: 0 16px;
+    color: ${properties => properties.theme.colors.text.light};
+    cursor: default;
+`
+
 export const TeacherNavBarText = styled(NavbarText)`
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    /* color: ${properties => properties.theme.colors.text};
+    background: ${properties => properties.theme.colors.background}; */
 `

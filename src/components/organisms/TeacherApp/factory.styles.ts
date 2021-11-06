@@ -8,8 +8,8 @@ type MainContentProperties = {
 
 export const MainContent = styled.main<MainContentProperties>`
     display: flex;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    /* color: ${properties => properties.theme.colors.text}; */
+    background: ${properties => properties.theme.colors.background.light};
     min-width: ${properties => (properties.sideMenu ? 'calc(80vw)' : 'calc(98vw + 104px)')};
     transform: ${properties => (properties.sideMenu ? 'translateX(0)' : 'translateX(-104px)')};
     transition: transform 0.6s ease;
@@ -30,7 +30,7 @@ export const VertSideNav = styled.nav`
 `
 
 type VertSideNavItemProperties = {
-    isselected: string
+    isselected: string | boolean
 }
 
 export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
@@ -64,7 +64,7 @@ export const VertSideNavItemSelector = styled.div<VertSideNavItemProperties>`
 `
 
 type VertSideNavLinkProperties = {
-    isselected: string
+    isselected: string | boolean
 }
 
 export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`

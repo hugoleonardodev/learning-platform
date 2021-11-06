@@ -14,7 +14,7 @@ export const FormLoginTitle = styled.h4`
 `
 
 export const FormLoginInputContainer = styled.div`
-    min-height: 80px;
+    min-height: 60px;
     max-width: calc(132px + 26vw);
 `
 

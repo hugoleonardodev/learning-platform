@@ -21,11 +21,11 @@ export const ToggleSwitchSlider = styled.span`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${properties => properties.theme.colors.background};
+    background-color: ${properties => properties.theme.colors.background.light};
     transition: 0.4s;
     box-shadow: 0 1px 2px 0 rgb(0 47 38 / 15%), 0 1px 3px 1px rgb(0 47 38 / 15%);
     &::before {
-        background-color: ${properties => properties.theme.colors.background};
+        background-color: ${properties => properties.theme.colors.background.light};
         position: absolute;
         content: '';
         height: 24px;

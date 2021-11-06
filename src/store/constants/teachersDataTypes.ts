@@ -39,6 +39,13 @@ export interface TeacherLesson {
     videoQuestions: VideoQuestion[]
 }
 
+export interface TeacherMessage {
+    messageTitle: string
+    messageSubTitle?: string
+    messageContent: string
+    messageAuthor: 'system' | 'admin'
+}
+
 /**
  * An object with all teacher's data state.
  * @teacherEmail teacher's email registered on the platform
@@ -99,6 +106,7 @@ export interface TeacherDataState {
     currentAnswers: string[]
     teacherLessons: TeacherLesson[]
     teacherFeedback: string
+    teacherMessages: TeacherMessage[]
 }
 
 /**
