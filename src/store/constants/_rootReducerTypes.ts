@@ -1,6 +1,6 @@
 import { ReactPlayerDataState } from 'store/reducers/videoPlayerDataReducer'
+import { TeacherDataState } from 'store/constants/teachersDataTypes'
 import { Quote } from './quotesDataTypes'
-import { TeacherDataState } from './teachersDataTypes'
 
 export interface QuoteData {
     data: Quote[]

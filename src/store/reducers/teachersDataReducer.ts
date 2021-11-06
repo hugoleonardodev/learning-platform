@@ -1,11 +1,11 @@
-import { TeacherActionsCreators } from 'store/actions/teachersActions'
-import { TeacherDataState, TeachersDataActionTypes } from 'store/constants/teachersDataTypes'
+import { TeacherActionsCreators, TeacherDataState, TeachersDataActionTypes } from 'store/constants/teachersDataTypes'
 
 const initialState = {
-    teacherEmail: 'Raimundo',
+    teacherEmail: 'toasty@sphinx.net',
+    teacherName: 'toasty',
     teacherIsAproved: false,
     currentLesson: 1,
-    totalLessons: 4,
+    totalLessons: 3,
     nextLesson: false,
     isTrainingStarted: false,
     isQuizStarted: false,
@@ -66,6 +66,11 @@ const initialState = {
     ],
 }
 
+/**
+ * Returns a Teacher Data State change.
+ * @param feedback
+ * @returns an object with `type` and `payload` to `dispatch` redux store's teacher is aproved status action
+ * @example
 const teachersDataReducer = (
     state: TeacherDataState = initialState,
     action: TeacherActionsCreators,
@@ -76,7 +81,57 @@ const teachersDataReducer = (
                 ...state,
                 teacherEmail: action.payload,
             }
-        case TeachersDataActionTypes.TEACHER_STARTING_COURSE:
+        case TeachersDataActionTypes.TEACHER_STARTING_TRAINING:
+            return {
+                ...state,
+                isTrainingStarted: action.payload,
+            }
+        case TeachersDataActionTypes.TEACHER_STARTING_QUIZ:
+            return {
+                ...state,
+                isQuizStarted: action.payload,
+            }
+        case TeachersDataActionTypes.TEACHER_SWITCH_THEME:
+            return {
+                ...state,
+                switchTheme: action.payload,
+            }
+        case TeachersDataActionTypes.TEACHER_ANSWERING_QUESTION:
+            return {
+                ...state,
+                currentAnswers: [...state.currentAnswers, action.payload],
+            }
+        case TeachersDataActionTypes.TEACHER_CLEAR_CURRENT_ANSWERS:
+            return {
+                ...state,
+                currentAnswers: [],
+            }
+        case TeachersDataActionTypes.TEACHER_UPDATE_COMPLETED_LESSONS:
+            return {
+                ...state,
+                completedLessons: [...state.completedLessons, action.payload],
+            }
+        case TeachersDataActionTypes.TEACHER_SUBMIT_FEEDBACK:
+            return {
+                ...state,
+                teacherFeedback: action.payload,
+            }
+        default:
+            return state
+    }
+}
+ */
+const teachersDataReducer = (
+    state: TeacherDataState = initialState,
+    action: TeacherActionsCreators,
+): TeacherDataState => {
+    switch (action.type) {
+        case TeachersDataActionTypes.TEACHER_LOGIN:
+            return {
+                ...state,
+                teacherEmail: action.payload,
+            }
+        case TeachersDataActionTypes.TEACHER_STARTING_TRAINING:
             return {
                 ...state,
                 isTrainingStarted: action.payload,

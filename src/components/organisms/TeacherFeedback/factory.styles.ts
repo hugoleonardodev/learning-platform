@@ -27,6 +27,8 @@ export const TeacherFeedbackTitle = styled.h2`
     }
 `
 
+export const TeacherFeedbackSubTitle = styled.h3``
+
 export const TeacherFeedbackMenuButtonContainer = styled.div``
 
 export const TeacherFeedbackButtonsToolbar = styled(ButtonToolbar)`

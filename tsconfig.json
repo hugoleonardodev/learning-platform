@@ -58,7 +58,8 @@
       "store/index": ["./src/store/index.ts"],
       "store/actions/*": ["./src/store/actions/*"],
       "store/constants/*": ["./src/store/constants/*"],
-      "store/reducers/*": ["./src/store/reducers/*"]
+      "store/reducers/*": ["./src/store/reducers/*"],
+      "store/types/*": ["./src/store/types/*"]
     },                                                   /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     "typeRoots": [

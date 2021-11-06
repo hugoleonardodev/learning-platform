@@ -7,6 +7,7 @@ import {
     TeacherFeedbackContainer,
     TeacherFeedbackMenuButton,
     TeacherFeedbackSubmitButton,
+    TeacherFeedbackSubTitle,
     TeacherFeedbackTitle,
 } from './factory.styles'
 
@@ -85,9 +86,11 @@ const TeacherFeedback: React.FC = () => {
 
     return (
         <TeacherFeedbackContainer>
-            <TeacherFeedbackTitle>
+            <TeacherFeedbackTitle>Parabéns professor! Você foi aprovado no treinamento.</TeacherFeedbackTitle>
+            <p>Enviamos um email com as datas possíveis para você agendar a entrevista final.</p>
+            <TeacherFeedbackSubTitle>
                 Envie-nos um feedback a respeito dos módulos de treinamento e questionário.
-            </TeacherFeedbackTitle>
+            </TeacherFeedbackSubTitle>
             {isTextAreaDisabled ? (
                 <div>Agradecemos o feedback!</div>
             ) : (

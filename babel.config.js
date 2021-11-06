@@ -59,6 +59,7 @@ module.exports = {
                     '^store/actions/(.+)': './src/store/actions/\\1',
                     '^store/constants/(.+)': './src/store/constants/\\1',
                     '^store/reducers/(.+)': './src/store/reducers/\\1',
+                    '^store/types/(.+)': './src/store/types/\\1',
                 },
             },
         ],
