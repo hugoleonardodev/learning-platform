@@ -1,14 +1,6 @@
 import React from 'react'
 import { useRouteMatch } from 'react-router'
 
-import TeacherHeader from 'components/molecules/TeacherHeader'
-
-import { fixedUrl } from 'common/functions'
-
-import { ReactComponent as DashboardIcon } from 'common/assets/dashboard.svg'
-import { ReactComponent as ProfileIcon } from 'common/assets/profile.svg'
-import { ReactComponent as LessonsIcon } from 'common/assets/lessons.svg'
-
 import {
     MainContent,
     MainSection,
@@ -18,24 +10,34 @@ import {
     VertSideNavLink,
 } from './factory.styles'
 
+import { fixedUrl } from 'common/functions'
+
+import TeacherHeader from 'components/molecules/TeacherHeader'
+
+import { ReactComponent as DashboardIcon } from 'common/assets/dashboard.svg'
+import { ReactComponent as ProfileIcon } from 'common/assets/profile.svg'
+import { ReactComponent as LessonsIcon } from 'common/assets/lessons.svg'
+
 const TeacherApp: React.FC = ({ children }) => {
     const [sideMenu, toggleSideMenu] = React.useState(false)
     const { url } = useRouteMatch()
     const locationPathname = window.location.pathname
-    const selectedRoute = locationPathname.split('/')
-    const selectedItem = selectedRoute[selectedRoute.length - 1]
-
     return (
         <>
-            <TeacherHeader toggleSideMenu={toggleSideMenu} sideMenu={sideMenu} selectedItem={selectedItem} />
+            <TeacherHeader toggleSideMenu={toggleSideMenu} sideMenu={sideMenu} />
             <MainContent sideMenu={sideMenu}>
                 <VertSideNav>
-                    <VertSideNavLink to={`${fixedUrl(url)}/`} isselected={selectedItem === ''}>
-                        <VertSideNavItem isselected={selectedItem === ''}>
+                    <VertSideNavLink
+                        to={`${fixedUrl(url)}/`}
+                        isselected={locationPathname.endsWith('teacher-app/') ? 'true' : 'false'}
+                    >
+                        <VertSideNavItem isselected={locationPathname.endsWith('teacher-app/') ? 'true' : 'false'}>
                             <DashboardIcon />
                             Home
                         </VertSideNavItem>
-                        <VertSideNavItemSelector isselected={selectedItem === ''} />
+                        <VertSideNavItemSelector
+                            isselected={locationPathname.endsWith('teacher-app/') ? 'true' : 'false'}
+                        />
                     </VertSideNavLink>
                     <VertSideNavLink
                         to={`${fixedUrl(url)}/lessons`}

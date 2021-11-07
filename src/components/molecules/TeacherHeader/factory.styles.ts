@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 import {
     Collapse,
@@ -97,11 +97,40 @@ export const TeacherNavLinkButton = styled(Link)<TeacherNavLinkButtonProperties>
 type TeacherNavLinkProperties = {
     istoggle?: boolean
     ismenu?: boolean | string
+    isactive?: boolean | string
 }
 
+const rotateToTop = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-180deg);
+    }
+`
+
+const rotateToBottom = keyframes`
+    from {
+        transform: rotate(-180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+`
+
+const isActiveMixin = css<TeacherNavLinkProperties>`
+    animation: ${rotateToTop} 0.3s ease-in;
+    transform: rotate(-180deg);
+`
+
+const isNotActiveMixin = css<TeacherNavLinkProperties>`
+    animation: ${rotateToBottom} 0.3s ease-in;
+    transform: rotate(0deg);
+`
+
 export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
-    /* color: ${properties => properties.theme.colors.text.light};
-    background: ${properties => properties.theme.colors.background.light}; */
     cursor: pointer;
     margin-right: ${properties => properties.ismenu === 'true' && '8px'};
     #hamburger-icon :nth-child(2) {
@@ -112,7 +141,11 @@ export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
         fill: ${properties => properties.theme.colors.text.light};
     }
 
-    #menu-list-icon :nth-child(2) {
+    #expand-more-icon {
+        ${({ isactive }) => (isactive === 'true' ? isActiveMixin : isNotActiveMixin)}
+    }
+
+    #expand-more-icon :nth-child(2) {
         fill: ${properties => properties.theme.colors.text.light};
     }
 
@@ -131,11 +164,6 @@ export const TeacherNavLink = styled(NavLink)<TeacherNavLinkProperties>`
 `
 
 export const TeacherDropdownToggle = styled(DropdownToggle)`
-    /* color: ${properties => properties.theme.colors.text}; */
-    /* background: ${properties => properties.theme.colors.background}; */
-    /* #my-face-icon :nth-child(2) {
-        fill: ${properties => properties.theme.colors.text};
-    } */
     display: flex;
     #person-icon {
         background-color: ${properties => properties.theme.colors.primary.main};
@@ -148,33 +176,24 @@ export const TeacherDropdownToggle = styled(DropdownToggle)`
     #notifications-icon :nth-child(2) {
         fill: ${properties => properties.theme.colors.text.light};
     }
-    /* &:hover {
-        #person-icon :nth-child(2) {
-            fill: ${properties => properties.theme.colors.primary.main};
-        }
-    } */
     @media only screen and (max-width: 769px) {
         margin-right: 8px;
     }
 `
 
 export const TeacherUncontrolledDropdown = styled(UncontrolledDropdown)`
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
     display: flex;
     align-items: center;
 `
 
 export const TeacherMessagesUncontrolledDropdown = styled(UncontrolledDropdown)`
     color: ${properties => properties.theme.colors.text};
-    /* background: ${properties => properties.theme.colors.background}; */
     display: flex;
     align-items: center;
 `
 
 export const TeacherMessagesDropdownMenu = styled(DropdownMenu)`
     transform: translate(-114px, 72px);
-    /* color: ${properties => properties.theme.colors.text.light}; */
     background: ${properties => properties.theme.colors.background.light};
     &:hover {
         #person-icon :nth-child(2) {
@@ -192,7 +211,6 @@ export const TeacherMessagesBadge = styled.span`
 
 export const TeacherDropdownMenu = styled(DropdownMenu)`
     transform: translate(-114px, 94px);
-    /* color: ${properties => properties.theme.colors.text.light}; */
     background: ${properties => properties.theme.colors.background.light};
     &:hover {
         #person-icon :nth-child(2) {
@@ -227,7 +245,4 @@ export const TeacherDropdownItemHeader = styled.span`
     cursor: default;
 `
 
-export const TeacherNavBarText = styled(NavbarText)`
-    /* color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background}; */
-`
+export const TeacherNavBarText = styled(NavbarText)``

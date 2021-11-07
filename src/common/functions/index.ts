@@ -1,3 +1,4 @@
 import fixedUrl from './fixedUrl'
+import toggleFullScreen from './toggleFullScreen'
 
-export { fixedUrl }
+export { fixedUrl, toggleFullScreen }

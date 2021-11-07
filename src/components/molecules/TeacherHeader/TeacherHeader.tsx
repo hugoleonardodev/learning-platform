@@ -1,5 +1,6 @@
 import React from 'react'
-import { useRouteMatch } from 'react-router'
+import { useRouteMatch, useHistory } from 'react-router'
+import { useSelector } from 'react-redux'
 
 import {
     TeacherDropdownItem,
@@ -17,7 +18,6 @@ import {
     TeacherNavCollapse,
     TeacherNavItem,
     TeacherNavLink,
-    // TeacherNavLinkButton,
     TeacherUncontrolledDropdown,
 } from './factory.styles'
 
@@ -28,25 +28,18 @@ import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
 import { ReactComponent as PersonIcon } from 'common/assets/person.svg'
 
 import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'
-import { useHistory } from 'react-router'
+import { fixedUrl, toggleFullScreen } from 'common/functions'
+
 import ToggleSwitch from 'components/atoms/ToggleSwitch'
-import { fixedUrl } from 'common/functions'
-import { useSelector } from 'react-redux'
+
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 type TeacherHeaderProperties = {
     sideMenu: boolean
     toggleSideMenu: React.Dispatch<React.SetStateAction<boolean>>
-    selectedItem: string
-    setSelectedItem?: React.Dispatch<React.SetStateAction<string>>
 }
 
-const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
-    toggleSideMenu,
-    sideMenu,
-    // setSelectedItem,
-    // selectedItem,
-}) => {
+const TeacherHeader: React.FC<TeacherHeaderProperties> = ({ toggleSideMenu, sideMenu }) => {
     const [isOpen, setIsOpen] = React.useState(false)
     const { url } = useRouteMatch()
     const history = useHistory()
@@ -61,22 +54,14 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                     <TeacherNavBrandLogo src={TimeToPlayLogo} alt="Time To Play" />
                     TIME TO PLAY
                 </TeacherNavBrand>
-                <TeacherNavLink istoggle="true" onClick={() => setIsOpen(!isOpen)}>
-                    <ExpandMoreIcon id="menu-list-icon" />
+                <TeacherNavLink istoggle="true" isactive={isOpen.toString()} onClick={() => setIsOpen(!isOpen)}>
+                    <ExpandMoreIcon id="expand-more-icon" />
                 </TeacherNavLink>
                 <TeacherNavCollapse isOpen={isOpen} navbar>
                     <TeacherNav className="me-auto" navbar>
                         <TeacherNavItem>
                             <ToggleSwitch />
                         </TeacherNavItem>
-                        {/* <TeacherNavItem>
-                            <TeacherNavLinkButton
-                                to={`${fixedUrl(url)}/messages`}
-                                isselected={selectedItem === 'messages'}
-                            >
-                                <NotificationsIcon id="notifications-icon" />
-                            </TeacherNavLinkButton>
-                        </TeacherNavItem> */}
                         <TeacherMessagesUncontrolledDropdown inNavbar nav>
                             <TeacherDropdownToggle nav>
                                 <NotificationsIcon id="notifications-icon" />
@@ -102,7 +87,7 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({
                             </TeacherMessagesDropdownMenu>
                         </TeacherMessagesUncontrolledDropdown>
                         <TeacherNavItem fullscreen="true">
-                            <TeacherNavLink>
+                            <TeacherNavLink onClick={() => toggleFullScreen()}>
                                 <FullScreenIcon id="full-screen-icon" />
                             </TeacherNavLink>
                         </TeacherNavItem>

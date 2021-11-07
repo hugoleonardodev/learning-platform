@@ -15,7 +15,7 @@ import { history } from './store'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 const RootWrapper = styled.div`
-    height: 100%;
+    overflow: auto;
     background: ${properties => properties.theme.colors.background.light};
     color: ${properties => properties.theme.colors.text.light};
 `

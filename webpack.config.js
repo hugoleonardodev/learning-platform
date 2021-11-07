@@ -63,7 +63,7 @@ const config = function (environment, arguments_) {
                     'msapplication-TileColor': '#1258ff',
                     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover',
                     'apple-mobile-web-app-status-bar-style': 'black-translucent',
-                    'theme-color': '#ffffff',
+                    'theme-color': '#00473d',
                     'msapplication-navbutton-color': '#1258ff',
                     'msapplication-starturl': '/?utm_source=a2hs',
                 },
