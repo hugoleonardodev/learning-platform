@@ -6,6 +6,10 @@ export const CardOverviewWrapperLink = styled(Link)`
     min-width: 240px;
     text-decoration: none;
     margin-bottom: 32px;
+    box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
+    @media only screen and (max-width: 769px) {
+        min-width: 200px;
+    }
 `
 
 export const CardOverviewContainer = styled(Card)`
@@ -13,7 +17,7 @@ export const CardOverviewContainer = styled(Card)`
     min-height: 240px;
     justify-content: center;
     align-items: center;
-    background: ${properties => properties.theme.colors.background};
+    background: ${properties => properties.theme.colors.background.light};
     @media only screen and (max-width: 769px) {
         min-height: 160px;
     }
@@ -36,7 +40,8 @@ export const CardOverviewTitle = styled(CardTitle)`
 `
 
 export const CardOverviewSubTitle = styled(CardSubtitle)`
-    color: ${properties => properties.theme.colors.grey.light};
+    color: ${properties =>
+        properties.theme.isDark ? properties.theme.colors.text.dark : properties.theme.colors.grey.light};
 `
 
 export const CardOverviewText = styled(CardText)`

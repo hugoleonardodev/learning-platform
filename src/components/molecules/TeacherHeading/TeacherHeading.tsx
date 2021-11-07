@@ -45,6 +45,9 @@ const TeacherHeading: React.FC<TeacherHeadingProperties> = ({ sectionTitle, sect
     }
 
     const fixedBreadcrumbPath = (breadcrumbTitle: string, breadcrumbLinks: SectionLink[]) => {
+        if (breadcrumbTitle === 'Home') {
+            return breadcrumbLinks
+        }
         if (breadcrumbTitle.startsWith('Lesson')) {
             const fixedArrayLinks = [...breadcrumbLinks]
 

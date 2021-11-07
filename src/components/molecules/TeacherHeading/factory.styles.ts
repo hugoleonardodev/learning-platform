@@ -2,22 +2,24 @@ import styled from 'styled-components'
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-export const TeacherBreadcrumbTitle = styled.h1``
+export const TeacherBreadcrumbTitle = styled.h1`
+    color: ${properties => properties.theme.colors.text.main};
+`
 
 export const TeacherBreadcrumb = styled(Breadcrumb)``
 
 export const TeacherBreadcrumbItem = styled(BreadcrumbItem)`
     a {
         text-decoration: none;
-        color: ${properties => properties.theme.colors.text};
+        color: ${properties => properties.theme.colors.primary.main};
         &:hover {
-            color: ${properties => properties.theme.colors.primary.main};
+            color: ${properties => properties.theme.colors.primary.light};
         }
     }
     &.active::before {
         float: left;
         padding-right: 0.5rem;
-        color: #6c757d;
+        color: ${properties => properties.theme.colors.grey.light};
         content: var(--bs-breadcrumb-divider, '|');
     }
 `

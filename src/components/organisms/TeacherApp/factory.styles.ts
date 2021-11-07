@@ -20,8 +20,8 @@ export const VertSideNav = styled.nav`
     max-width: 128px;
     min-width: 104px;
     margin-top: -28px;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    /* color: ${properties => properties.theme.colors.text.light}; */
+    /* background: ${properties => properties.theme.colors.background}; */
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
     @media only screen and (max-width: 769px) {
         max-width: 76px;
@@ -44,7 +44,9 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
     background: ${properties => properties.theme.colors.background};
     svg :nth-child(2) {
         fill: ${properties =>
-            properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.text};
+            properties.isselected === 'true'
+                ? properties.theme.colors.primary.main
+                : properties.theme.colors.grey.main};
     }
     @media only screen and (max-width: 769px) {
         min-width: 58px;
@@ -73,7 +75,7 @@ export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
     text-decoration: none;
     padding: 12px 0;
     color: ${properties =>
-        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.text};
+        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.grey.main};
     &:hover {
         .nav-item {
             color: ${properties => properties.theme.colors.primary.main};

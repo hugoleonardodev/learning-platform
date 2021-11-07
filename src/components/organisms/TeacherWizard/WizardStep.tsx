@@ -40,12 +40,9 @@ const WizardStep: React.FC<WizardStepProperties> = ({ nextStep, currentQuestion 
 
     const submitButtonIsDisabled = !questionOneFieldHasError && questionOneFieldIsDirty
 
+    const { completedLessons, teacherLessons } = useSelector((state: RootStateWithReducers) => state.teachers)
     const dispatch = useDispatch()
-    const completedLessons = useSelector((state: RootStateWithReducers) => state.teachers.completedLessons)
-
     const history = useHistory()
-
-    const teacherLessons = useSelector((state: RootStateWithReducers) => state.teachers.teacherLessons)
 
     const loacationPath = window.location.pathname
     const splitedLocationPath = loacationPath.split('/')

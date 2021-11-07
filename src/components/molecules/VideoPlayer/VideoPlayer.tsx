@@ -17,7 +17,6 @@ import { ReactComponent as PauseIcon } from 'common/assets/pause.svg'
 
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 import { dispatchPlayVideo, dispatchStopVideo } from 'store/actions/videoPayerActions'
-// import { teacherStartQuiz } from 'store/actions/teachersActions'
 
 interface VideoProgressState {
     played: number
@@ -27,15 +26,14 @@ interface VideoProgressState {
 }
 
 const VideoPlayer: React.FC = () => {
-    const videoPlayerState = useSelector((state: RootStateWithReducers) => state.videoPlayer)
-    const teacherState = useSelector((state: RootStateWithReducers) => state.teachers)
+    const { videoPlayer, teachers } = useSelector((state: RootStateWithReducers) => state)
     const { path } = useRouteMatch()
     const history = useHistory()
     const dispatch = useDispatch()
     const playerReference = React.useRef<ReactPlayer | null>(null)
     const [isLessonFinished, setIsLessonFinished] = React.useState(false)
 
-    const { url, pip, playing, controls, light, loop, playbackRate, volume } = videoPlayerState
+    const { url, pip, playing, controls, light, loop, playbackRate, volume } = videoPlayer
 
     const handleStartToPLayVideo = () => {
         return dispatch(dispatchPlayVideo())
@@ -66,7 +64,7 @@ const VideoPlayer: React.FC = () => {
 
     const loacationPath = window.location.pathname
     const positionNumber = Number.parseInt(loacationPath[loacationPath.length - 1])
-    const currentQuestion = teacherState.teacherLessons[positionNumber - 1]
+    const currentQuestion = teachers.teacherLessons[positionNumber - 1]
 
     return (
         <VideoPlayerContainer>

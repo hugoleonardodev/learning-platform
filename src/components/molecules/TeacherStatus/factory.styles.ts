@@ -9,7 +9,10 @@ export const TeacherStatusCardGroup = styled(CardGroup)``
 
 export const TeacherStatusCard = styled(Card)``
 
-export const TeacherStatusTitle = styled.h2``
+export const TeacherStatusTitle = styled.h2`
+    color: ${properties =>
+        properties.theme.isDark ? properties.theme.colors.text.main : properties.theme.colors.grey.main};
+`
 
 export const TeacherStatusRow = styled(Row)``
 
@@ -25,6 +28,8 @@ export const ContinueTrainingButton = styled(Button)`
     box-shadow: 0 1px 2px 0 rgba(0, 47, 38, 0.15), 0 1px 3px 1px rgba(0, 47, 38, 0.15);
     background-color: ${properties => properties.theme.colors.primary.main};
     border-color: ${properties => properties.theme.colors.primary.main};
+    color: ${properties =>
+        properties.theme.isDark ? properties.theme.colors.grey.main : properties.theme.colors.primary.text};
     &:hover {
         background-color: ${properties => properties.theme.colors.primary.dark};
         border-color: ${properties => properties.theme.colors.primary.dark};

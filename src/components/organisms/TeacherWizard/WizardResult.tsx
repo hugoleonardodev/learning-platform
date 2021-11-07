@@ -1,13 +1,13 @@
-import TeacherResult from 'components/molecules/TeacherResult'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useRouteMatch } from 'react-router'
+
+import TeacherResult from 'components/molecules/TeacherResult'
+
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 const WizardResult: React.FC = () => {
-    const currentAnswers = useSelector((state: RootStateWithReducers) => state.teachers.currentAnswers)
-
-    const teacherLessons = useSelector((state: RootStateWithReducers) => state.teachers.teacherLessons)
+    const { currentAnswers, teacherLessons } = useSelector((state: RootStateWithReducers) => state.teachers)
     const { path } = useRouteMatch()
 
     const pathArray = path.split('/')
