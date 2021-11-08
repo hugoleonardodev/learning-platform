@@ -14,7 +14,7 @@ const darkTheme = {
             theme: '#ffffff',
         },
         grey: {
-            light: '#54575a',
+            light: '#6d6d6d',
             main: '#2b2e31',
             dark: '#000309',
             text: '#ffffff',

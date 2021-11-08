@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { NavItem } from 'reactstrap'
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 type MainContentProperties = {
@@ -8,24 +8,28 @@ type MainContentProperties = {
 
 export const MainContent = styled.main<MainContentProperties>`
     display: flex;
-    /* color: ${properties => properties.theme.colors.text}; */
     background: ${properties => properties.theme.colors.background.light};
-    min-width: ${properties => (properties.sideMenu ? 'calc(80vw)' : 'calc(98vw + 104px)')};
     transform: ${properties => (properties.sideMenu ? 'translateX(0)' : 'translateX(-104px)')};
     transition: transform 0.6s ease;
+    @media only screen and (max-width: 769px) {
+        transform: none;
+    }
 `
 
-export const VertSideNav = styled.nav`
+export const VertSideNav = styled.nav<MainContentProperties>`
     height: 100vh;
     max-width: 128px;
     min-width: 104px;
     margin-top: -28px;
-    /* color: ${properties => properties.theme.colors.text.light}; */
-    /* background: ${properties => properties.theme.colors.background}; */
+    background: ${properties => properties.theme.colors.background.light};
     box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
+    transition: transform 0.6s ease;
     @media only screen and (max-width: 769px) {
         max-width: 76px;
         min-width: 76px;
+        position: absolute;
+        z-index: 2;
+        transform: ${properties => (properties.sideMenu ? 'translateX(0)' : 'translateX(-76px)')};
     }
 `
 
@@ -46,7 +50,7 @@ export const VertSideNavItem = styled(NavItem)<VertSideNavItemProperties>`
         fill: ${properties =>
             properties.isselected === 'true'
                 ? properties.theme.colors.primary.main
-                : properties.theme.colors.grey.main};
+                : properties.theme.colors.grey.light};
     }
     @media only screen and (max-width: 769px) {
         min-width: 58px;
@@ -75,7 +79,7 @@ export const VertSideNavLink = styled(Link)<VertSideNavLinkProperties>`
     text-decoration: none;
     padding: 12px 0;
     color: ${properties =>
-        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.grey.main};
+        properties.isselected === 'true' ? properties.theme.colors.primary.main : properties.theme.colors.grey.light};
     &:hover {
         .nav-item {
             color: ${properties => properties.theme.colors.primary.main};
@@ -97,10 +101,12 @@ type MainSectionProperties = {
 export const MainSection = styled.section<MainSectionProperties>`
     height: 100vh;
     margin-left: 104px;
-    min-width: ${properties => (properties.sideMenu ? 'calc(70vw)' : 'calc(80vw)')};
     transition: min-width 0.6s ease;
-    transform: ${properties => (properties.sideMenu ? 'translateX(-64px)' : 'translateX(0)')};
+    background: ${properties => properties.theme.colors.background.light};
+    width: 100%;
     @media only screen and (max-width: 769px) {
-        transform: ${properties => (properties.sideMenu ? 'translate(-88px, -16px)' : 'translate(-44px, -16px)')};
+        margin-left: 8px;
+        padding-right: 8px;
+        width: 96%;
     }
 `

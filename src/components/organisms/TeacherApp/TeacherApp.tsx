@@ -26,7 +26,7 @@ const TeacherApp: React.FC = ({ children }) => {
         <>
             <TeacherHeader toggleSideMenu={toggleSideMenu} sideMenu={sideMenu} />
             <MainContent sideMenu={sideMenu}>
-                <VertSideNav>
+                <VertSideNav sideMenu={sideMenu}>
                     <VertSideNavLink
                         to={`${fixedUrl(url)}/`}
                         isselected={locationPathname.endsWith('teacher-app/') ? 'true' : 'false'}
