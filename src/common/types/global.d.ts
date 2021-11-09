@@ -1,3 +1,13 @@
+/// <reference types="node" />
+/// <reference types="react" />
+/// <reference types="react-dom" />
+/// <reference types="redux" />
+/// <reference types="react-redux" />
+/// <reference types="react-router-dom" />
+/// <reference types="webpack" />
+/// <reference types="webpack-dev-server" />
+/// <reference types="styled-components" />
+
 declare const __DEVELOPMENT__: boolean
 declare const __PRODUCTION__: boolean
 declare const __APP_NAME__: string

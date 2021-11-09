@@ -1,4 +1,4 @@
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 import React from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'

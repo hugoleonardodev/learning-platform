@@ -15,8 +15,11 @@ import { ReactComponent as OrderedListIcon } from 'common/assets/ordered_list.sv
 import { ReactComponent as UndoIcon } from 'common/assets/undo.svg'
 import { ReactComponent as RedoIcon } from 'common/assets/redo.svg'
 import { ReactComponent as ClearIcon } from 'common/assets/clear.svg'
+import { useWindowSize } from 'common/hooks'
 
 export const BoldItalicUnderline: React.FC<EditorContentProps> = ({ editor }) => {
+    const [width] = useWindowSize()
+    const MAX_WIDTH = 768
     if (!editor) {
         return null
     }
@@ -43,12 +46,14 @@ export const BoldItalicUnderline: React.FC<EditorContentProps> = ({ editor }) =>
                 <StrikeIcon />
             </TeacherFeedbackMenuButton>
 
-            <TeacherFeedbackMenuButtonClearMobile
-                onClick={() => editor.chain().focus().clearContent().run()}
-                isclearbutton={'true'}
-            >
-                <ClearIcon />
-            </TeacherFeedbackMenuButtonClearMobile>
+            {width && width < MAX_WIDTH && (
+                <TeacherFeedbackMenuButtonClearMobile
+                    onClick={() => editor.chain().focus().clearContent().run()}
+                    isclearbutton={'true'}
+                >
+                    <ClearIcon />
+                </TeacherFeedbackMenuButtonClearMobile>
+            )}
         </TeacherFeedbackButtonGroup>
     )
 }

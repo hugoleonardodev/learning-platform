@@ -104,9 +104,11 @@ export const MainSection = styled.section<MainSectionProperties>`
     transition: min-width 0.6s ease;
     background: ${properties => properties.theme.colors.background.light};
     width: 100%;
+
     @media only screen and (max-width: 769px) {
         margin-left: 8px;
         padding-right: 8px;
         width: 96%;
+        overflow: scroll;
     }
 `

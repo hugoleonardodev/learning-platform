@@ -2,7 +2,8 @@ import React from 'react'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import VideoPlayer from 'components/molecules/VideoPlayer'
+// import VideoPlayer from 'components/molecules/VideoPlayer'
+const VideoPlayer = React.lazy(() => import('components/molecules/VideoPlayer'))
 import TeacherHeading from 'components/molecules/TeacherHeading'
 
 import { VideoQuestion } from 'store/constants/teachersDataTypes'
@@ -32,7 +33,9 @@ const TeacherWizard: React.FC = () => {
         <Switch>
             <Route exact path={path}>
                 <TeacherHeading sectionTitle={`Lesson${lessonPosition}`} sectionLinks={teacherHomeSectionLinks} />
-                <VideoPlayer />
+                <React.Suspense fallback={<div>Carregando...</div>}>
+                    <VideoPlayer />
+                </React.Suspense>
             </Route>
             {videoQuestions.map((question, index) => (
                 <Route path={`${path}/question${index + 1}`} key={question.question}>
