@@ -21,13 +21,13 @@ import {
 } from './factory.styles'
 
 import StudyingOnlineAvif from 'common/assets/studying_online.avif'
-import StudyingOnlineAvifBg from 'common/assets/studying_online_bg.avif'
+// import StudyingOnlineAvifBg from 'common/assets/studying_online_bg.avif'
 import TimeToPlayLogoAvif from 'common/assets/time-to-play-logo.avif'
 import StudyingOnlineWebp from 'common/assets/studying_online.webp'
-import StudyingOnlineWebpBg from 'common/assets/studying_online_bg.webp'
+// import StudyingOnlineWebpBg from 'common/assets/studying_online_bg.webp'
 import TimeToPlayLogoWebp from 'common/assets/time-to-play-logo.webp'
 import StudyingOnlineJpg from 'common/assets/studying_online.jpg'
-import StudyingOnlineJpgBg from 'common/assets/studying_online_bg.jpg'
+// import StudyingOnlineJpgBg from 'common/assets/studying_online_bg.jpg'
 import TimeToPlayLogoJpg from 'common/assets/time-to-play-logo.jpg'
 
 import HomeFooter from 'components/molecules/HomeFooter'
@@ -38,10 +38,10 @@ const HomeLayout: React.FC = () => {
     return (
         <HomeContainer as="main">
             <HomePictureContainer>
-                <source srcSet={StudyingOnlineAvifBg} type="image/avif" />
-                <source srcSet={StudyingOnlineWebpBg} type="image/webp" />
+                <source srcSet={StudyingOnlineAvif} type="image/avif" />
+                <source srcSet={StudyingOnlineWebp} type="image/webp" />
                 <HomeBackground
-                    src={StudyingOnlineJpgBg}
+                    src={TimeToPlayLogoJpg}
                     alt="Studying Background"
                     width="1254"
                     height="836"
