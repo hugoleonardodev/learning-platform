@@ -7,9 +7,9 @@ export const FormLoginContainer = styled(Form)`
     background: ${properties => properties.theme.colors.background};
 `
 
-export const FormLoginTitle = styled.h4`
+export const FormLoginTitle = styled.h2`
     margin-left: 14px;
-    color: ${properties => properties.theme.colors.text};
+    color: ${properties => properties.theme.colors.grey.main};
     background: ${properties => properties.theme.colors.background};
 `
 

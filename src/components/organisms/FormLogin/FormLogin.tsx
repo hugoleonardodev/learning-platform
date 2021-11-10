@@ -76,11 +76,22 @@ const FormLogin: React.FC<FormLoginProperties> = ({ setForgotPassword }) => {
             <FormLoginGroup>
                 <FormLoginTitle>Login</FormLoginTitle>
                 <FormLoginInputContainer>
-                    <FormLoginEmailInput type="email" className={emailClasses} tabIndex={0} {...register('email')} />
+                    <FormLoginEmailInput
+                        type="email"
+                        id="email"
+                        className={emailClasses}
+                        tabIndex={0}
+                        {...register('email')}
+                    />
                     <FormLoginLabel htmlFor="email">E-mail</FormLoginLabel>
                 </FormLoginInputContainer>
                 <FormLoginInputContainer>
-                    <FormLoginPasswordInput type="password" className={passwordClasses} {...register('password')} />
+                    <FormLoginPasswordInput
+                        type="password"
+                        id="password"
+                        className={passwordClasses}
+                        {...register('password')}
+                    />
                     <FormLoginLabel htmlFor="password">Senha</FormLoginLabel>
                 </FormLoginInputContainer>
                 {emailFieldHasError || passwordFieldHasError ? (

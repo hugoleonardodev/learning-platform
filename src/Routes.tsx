@@ -17,7 +17,6 @@ import { history } from './store'
 import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
 
 const RootWrapper = styled.div`
-    /* overflow: auto; */
     background: ${properties => properties.theme.colors.background.light};
     color: ${properties => properties.theme.colors.text.light};
 `
@@ -27,20 +26,18 @@ const Routes: React.FC = () => {
     return (
         <ThemeProvider theme={switchTheme ? darkTheme : goodContrastTheme}>
             <RootWrapper>
-                <ConnectedRouter history={history}>
-                    <Switch>
-                        <Route exact path="/">
-                            <React.Suspense fallback={<div>Carregando...</div>}>
+                <React.Suspense fallback={<div>Carregando...</div>}>
+                    <ConnectedRouter history={history}>
+                        <Switch>
+                            <Route exact path="/">
                                 <HomePage />
-                            </React.Suspense>
-                        </Route>
-                        <Route path="/teacher-app">
-                            <React.Suspense fallback={<div>Carregando...</div>}>
+                            </Route>
+                            <Route path="/teacher-app">
                                 <TeacherPage />
-                            </React.Suspense>
-                        </Route>
-                    </Switch>
-                </ConnectedRouter>
+                            </Route>
+                        </Switch>
+                    </ConnectedRouter>
+                </React.Suspense>
             </RootWrapper>
         </ThemeProvider>
     )

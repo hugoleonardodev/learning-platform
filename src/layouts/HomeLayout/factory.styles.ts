@@ -8,8 +8,19 @@ export const HomeContainer = styled(Container)`
     align-items: center;
 `
 
-export const HomeBackground = styled.img`
+export const HomePictureContainer = styled.picture`
     height: 100%;
+    width: 100%;
+    position: absolute;
+`
+
+export const HomeFormPictureContainer = styled.picture`
+    height: 100%;
+    width: 100%;
+`
+
+export const HomeBackground = styled.img`
+    height: 760px;
     width: 100%;
     position: absolute;
     filter: brightness(0.5);
@@ -28,21 +39,23 @@ export const ButtonRounded = styled(Button)`
 `
 export const InputRounded = styled(Input)`
     border-radius: 100px;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.text.theme};
+    background: ${properties => properties.theme.colors.background.light};
 `
 export const HomeCardImage = styled(CardImg)`
     filter: brightness(0.5);
+    min-height: 304px;
+    height: 100%;
     @media only screen and (min-width: 768px) {
-        min-height: 356px;
+        min-height: 304px;
     }
 `
 
 export const HomeCard = styled(Card)`
     border: none;
     margin-bottom: 0 !important;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.text.theme};
+    background: ${properties => properties.theme.colors.background.light};
 `
 
 export const HomeCardTextContainer = styled.div`
@@ -67,26 +80,26 @@ export const HomeLogoContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     margin-top: 20px;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.text.theme};
+    background: ${properties => properties.theme.colors.background.light};
 `
 
 export const HomeLogoTitle = styled.h1`
     margin-left: 16px;
-    color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.grey.main};
+    background: ${properties => properties.theme.colors.background.light};
 `
 
 export const HomeCardTitle = styled.h2`
-    color: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.background.light};
 `
 
 export const HomeCardSubTitle = styled.h3`
-    color: ${properties => properties.theme.colors.background};
+    color: ${properties => properties.theme.colors.background.light};
 `
 
 export const HomeCardGroup = styled(CardGroup)`
     max-width: 80vw;
     color: ${properties => properties.theme.colors.text};
-    background: ${properties => properties.theme.colors.background};
+    background: ${properties => properties.theme.colors.background.light};
 `

@@ -5,19 +5,39 @@ declare module '*.svg' {
     export default source
 }
 
+declare module '*.avif' {
+    const source: string
+    export default source
+}
+
+declare module '*.bmp' {
+    const source: string
+    export default source
+}
+
+declare module '*.gif' {
+    const source: string
+    export default source
+}
+
 declare module '*.jpg' {
-    const content: string
-    export default content
+    const source: string
+    export default source
 }
 
 declare module '*.jpeg' {
-    const content: string
-    export default content
+    const source: string
+    export default source
 }
 
 declare module '*.png' {
-    const content: string
-    export default content
+    const source: string
+    export default source
+}
+
+declare module '*.webp' {
+    const source: string
+    export default source
 }
 
 declare module '*.json' {

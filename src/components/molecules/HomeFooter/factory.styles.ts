@@ -14,8 +14,8 @@ export const HomeFooterContainer = styled.footer`
     }
 `
 
-export const HomeFooterTitle = styled.h5`
-    color: ${properties => properties.theme.colors.background};
+export const HomeFooterTitle = styled.h3`
+    color: ${properties => properties.theme.colors.background.light};
 `
 
 export const HomeFooterNav = styled.nav``
