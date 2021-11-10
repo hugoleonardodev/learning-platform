@@ -1,7 +1,5 @@
 import React from 'react'
 
-import FormLogin from 'components/organisms/FormLogin'
-
 import {
     HomeContainer,
     HomePictureContainer,
@@ -21,16 +19,14 @@ import {
 } from './factory.styles'
 
 import StudyingOnlineAvif from 'common/assets/studying_online.avif'
-// import StudyingOnlineAvifBg from 'common/assets/studying_online_bg.avif'
 import TimeToPlayLogoAvif from 'common/assets/time-to-play-logo.avif'
 import StudyingOnlineWebp from 'common/assets/studying_online.webp'
-// import StudyingOnlineWebpBg from 'common/assets/studying_online_bg.webp'
 import TimeToPlayLogoWebp from 'common/assets/time-to-play-logo.webp'
 import StudyingOnlineJpg from 'common/assets/studying_online.jpg'
-// import StudyingOnlineJpgBg from 'common/assets/studying_online_bg.jpg'
 import TimeToPlayLogoJpg from 'common/assets/time-to-play-logo.jpg'
 
 import HomeFooter from 'components/molecules/HomeFooter'
+import FormLogin from 'components/organisms/FormLogin'
 import ForgotPassword from 'components/organisms/FormLogin/ForgotPassword'
 
 const HomeLayout: React.FC = () => {
@@ -49,14 +45,6 @@ const HomeLayout: React.FC = () => {
                     loading="eager"
                 />
             </HomePictureContainer>
-            {/* <HomeBackground
-                src={StudyingOnlineJpgBg}
-                alt="Studying Background"
-                width="1254"
-                height="836"
-                decoding="async"
-                loading="lazy"
-            /> */}
             <HomeCardGroup>
                 <HomeCard>
                     <HomeRow xs="1">

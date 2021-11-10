@@ -1,17 +1,32 @@
+import styled, { ThemeProvider } from 'styled-components'
 import React from 'react'
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
 
 import store from './store'
 
 import Routes from './Routes'
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import { RootStateWithReducers } from 'store/constants/_rootReducerTypes'
+
+import darkTheme from 'common/themes/darkTheme'
+// import defaultTheme from 'common/themes/defaultTheme'
+import goodContrastTheme from 'common/themes/goodContrastTheme'
+
+const RootWrapper = styled.div`
+    background: ${properties => properties.theme.colors.background.light};
+    color: ${properties => properties.theme.colors.text.light};
+`
 import './App.scss'
-// import '../_main.scss'
+
 const App: React.FC = () => {
+    const { switchTheme } = useSelector((state: RootStateWithReducers) => state.teachers)
     return (
         <Provider store={store}>
-            <Routes />
+            <ThemeProvider theme={switchTheme ? darkTheme : goodContrastTheme}>
+                <RootWrapper>
+                    <Routes />
+                </RootWrapper>
+            </ThemeProvider>
         </Provider>
     )
 }

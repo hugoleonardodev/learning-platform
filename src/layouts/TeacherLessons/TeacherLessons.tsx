@@ -1,13 +1,10 @@
-import React from 'react'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
+import React from 'react'
 
-// import TeacherWizard from 'components/organisms/TeacherWizard'
 const TeacherWizard = React.lazy(() => import('components/organisms/TeacherWizard'))
-// import TeacherInstructions from 'components/organisms/TeacherInstructions'
 const TeacherInstructions = React.lazy(() => import('components/organisms/TeacherInstructions'))
-// import TeacherFeedback from 'components/organisms/TeacherFeedback'
 const TeacherFeedback = React.lazy(() => import('components/organisms/TeacherFeedback'))
-import TeacherHeading from 'components/molecules/TeacherHeading'
+const TeacherHeading = React.lazy(() => import('components/molecules/TeacherHeading'))
 
 const teacherHomeSectionLinks = [
     { linkTitle: 'App', linkPath: '' },
@@ -41,8 +38,8 @@ const TeacherLessons: React.FC = () => {
                 </React.Suspense>
             </Route>
             <Route path={`${path}/result`}>
-                <TeacherHeading sectionTitle="Training Result" sectionLinks={teacherHomeSectionLinks} />
                 <React.Suspense fallback={<div>Carregando...</div>}>
+                    <TeacherHeading sectionTitle="Training Result" sectionLinks={teacherHomeSectionLinks} />
                     <TeacherFeedback />
                 </React.Suspense>
             </Route>
