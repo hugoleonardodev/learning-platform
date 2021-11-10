@@ -20,7 +20,7 @@ export const HomeFormPictureContainer = styled.picture`
 `
 
 export const HomeBackground = styled.img`
-    height: 844px;
+    height: 836px;
     width: 100%;
     position: absolute;
     filter: brightness(0.5);
