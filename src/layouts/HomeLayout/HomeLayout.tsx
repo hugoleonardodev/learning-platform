@@ -25,7 +25,7 @@ import TimeToPlayLogoAvif from 'common/assets/time-to-play-logo.avif'
 import StudyingOnlineWebp from 'common/assets/studying_online.webp'
 import TimeToPlayLogoWebp from 'common/assets/time-to-play-logo.webp'
 import StudyingOnlineJpg from 'common/assets/studying_online.jpg'
-import TimeToPlayLogoJpeg from 'common/assets/time-to-play-logo.jpeg'
+import TimeToPlayLogoJpg from 'common/assets/time-to-play-logo.jpg'
 
 import HomeFooter from 'components/molecules/HomeFooter'
 import ForgotPassword from 'components/organisms/FormLogin/ForgotPassword'
@@ -77,7 +77,7 @@ const HomeLayout: React.FC = () => {
                                     <source srcSet={TimeToPlayLogoAvif} type="image/avif" />
                                     <source srcSet={TimeToPlayLogoWebp} type="image/webp" />
                                     <HomeLogo
-                                        src={TimeToPlayLogoJpeg}
+                                        src={TimeToPlayLogoJpg}
                                         alt="Studying Online"
                                         width="72"
                                         height="72"

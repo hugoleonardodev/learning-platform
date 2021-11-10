@@ -27,7 +27,7 @@ import { ReactComponent as NotificationsIcon } from 'common/assets/notifications
 import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
 import { ReactComponent as PersonIcon } from 'common/assets/person.svg'
 
-import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpeg'
+import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpg'
 import { fixedUrl, toggleFullScreen } from 'common/functions'
 
 import ToggleSwitch from 'components/atoms/ToggleSwitch'
