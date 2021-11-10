@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const autoprefixer = require('autoprefixer')
+// const autoprefixer = require('autoprefixer')
 const dotenv = require('dotenv')
 const webpackDevelopmentConfig = require('./webpack.development')
 const webpackProductionConfig = require('./webpack.production')
@@ -97,34 +97,68 @@ const config = function (environment, arguments_) {
                 {
                     test: /\.scss$/,
                     use: [
+                        // {
+                        //     loader: 'file-loader',
+                        //     options: {
+                        //         name: 'bundle.css',
+                        //     },
+                        // },
+                        // {
+                        //     loader: 'style-loader', // inject CSS to page
+                        // },
+                        // {
+                        //     loader: 'css-loader', // translates CSS into CommonJS modules
+                        // },
+                        // {
+                        //     loader: 'postcss-loader', // Run post css actions
+                        //     options: {
+                        //         // plugins: function () {
+                        //         //     // post css plugins, can be exported to postcss.config.js
+                        //         //     return [require('precss'), require('autoprefixer')]
+                        //         // },
+                        //         postcssOptions: {
+                        //             plugins: [autoprefixer()],
+                        //         },
+                        //     },
+                        // },
+                        // {
+                        //     loader: 'sass-loader', // compiles Sass to CSS
+                        //     options: {
+                        //         // Prefer Dart Sass
+                        //         implementation: require('sass'),
+
+                        //         // See https://github.com/webpack-contrib/sass-loader/issues/804
+                        //         webpackImporter: false,
+                        //         sassOptions: {
+                        //             includePaths: ['./node_modules'],
+                        //         },
+                        //     },
+                        // },
                         {
-                            loader: 'file-loader',
-                            options: {
-                                name: 'bundle.css',
-                            },
+                            // inject CSS to page
+                            loader: 'style-loader',
                         },
-                        { loader: 'extract-loader' },
-                        { loader: 'css-loader' },
                         {
+                            // translates CSS into CommonJS modules
+                            loader: 'css-loader',
+                        },
+                        {
+                            // Run postcss actions
                             loader: 'postcss-loader',
                             options: {
+                                // `postcssOptions` is needed for postcss 8.x;
+                                // if you use postcss 7.x skip the key
                                 postcssOptions: {
-                                    plugins: [autoprefixer()],
+                                    // postcss plugins, can be exported to postcss.config.js
+                                    plugins: function () {
+                                        return [require('autoprefixer')]
+                                    },
                                 },
                             },
                         },
                         {
+                            // compiles Sass to CSS
                             loader: 'sass-loader',
-                            options: {
-                                // Prefer Dart Sass
-                                implementation: require('sass'),
-
-                                // See https://github.com/webpack-contrib/sass-loader/issues/804
-                                webpackImporter: false,
-                                sassOptions: {
-                                    includePaths: ['./node_modules'],
-                                },
-                            },
                         },
                     ],
                 },

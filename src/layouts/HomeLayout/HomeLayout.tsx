@@ -37,7 +37,6 @@ const HomeLayout: React.FC = () => {
             <HomePictureContainer>
                 <source srcSet={StudyingOnlineAvif} type="image/avif" />
                 <source srcSet={StudyingOnlineWebp} type="image/webp" />
-                {/* <img width="1280" height="720" decoding="async" loading="lazy" src="image.jpg" alt="an avif image" /> */}
                 <HomeBackground
                     src={StudyingOnlineJpg}
                     alt="Studying Background"
@@ -47,7 +46,6 @@ const HomeLayout: React.FC = () => {
                     loading="lazy"
                 />
             </HomePictureContainer>
-            {/* <HomeBackground src={StudyingOnline} alt="Studying Background" /> */}
             <HomeCardGroup>
                 <HomeCard>
                     <HomeRow xs="1">
