@@ -40,8 +40,8 @@ const HomeLayout: React.FC = () => {
                 <HomeBackground
                     src={StudyingOnlineJpg}
                     alt="Studying Background"
-                    width="2048"
-                    height="1365"
+                    width="1224"
+                    height="836"
                     decoding="async"
                     loading="lazy"
                 />
@@ -60,8 +60,8 @@ const HomeLayout: React.FC = () => {
                                 <HomeCardImage
                                     src={StudyingOnlineJpg}
                                     alt="Studying Online"
-                                    width="2048"
-                                    height="1365"
+                                    width="1224"
+                                    height="836"
                                     decoding="async"
                                     loading="lazy"
                                 />
