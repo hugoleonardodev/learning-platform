@@ -46,9 +46,17 @@ const HomeLayout: React.FC = () => {
                     width="1254"
                     height="836"
                     decoding="async"
-                    loading="lazy"
+                    loading="eager"
                 />
             </HomePictureContainer>
+            <HomeBackground
+                src={StudyingOnlineJpgBg}
+                alt="Studying Background"
+                width="1254"
+                height="836"
+                decoding="async"
+                loading="lazy"
+            />
             <HomeCardGroup>
                 <HomeCard>
                     <HomeRow xs="1">
