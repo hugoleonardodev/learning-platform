@@ -4,7 +4,7 @@ import FormLogin from 'components/organisms/FormLogin'
 
 import {
     HomeContainer,
-    // HomePictureContainer,
+    HomePictureContainer,
     HomeBackground,
     HomeCard,
     HomeCardGroup,
@@ -34,18 +34,18 @@ const HomeLayout: React.FC = () => {
     const [forgotPassword, setForgotPassword] = React.useState(false)
     return (
         <HomeContainer as="main">
-            {/* <HomePictureContainer>
+            <HomePictureContainer>
                 <source srcSet={StudyingOnlineAvif} type="image/avif" />
-                <source srcSet={StudyingOnlineWebp} type="image/webp" /> */}
-            <HomeBackground
-                src={StudyingOnlineJpg}
-                alt="Studying Background"
-                width="2048"
-                height="1365"
-                decoding="async"
-                loading="lazy"
-            />
-            {/* </HomePictureContainer> */}
+                <source srcSet={StudyingOnlineWebp} type="image/webp" />
+                <HomeBackground
+                    src={StudyingOnlineJpg}
+                    alt="Studying Background"
+                    width="2048"
+                    height="1365"
+                    decoding="async"
+                    loading="lazy"
+                />
+            </HomePictureContainer>
             <HomeCardGroup>
                 <HomeCard>
                     <HomeRow xs="1">
