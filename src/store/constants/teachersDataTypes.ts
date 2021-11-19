@@ -235,7 +235,7 @@ export interface TeacherIsAproved {
  * @default "TEACHER_SUBMIT_FEEDBACK"
  * @payload teacher's feedback after all lessons completed
  * @param string
- * @example "<p>Olá Time To Play, ótima aula!</p>"
+ * @example "<p>Olá Learning Platform, ótima aula!</p>"
  */
 export interface TeacherSubmitFeedback {
     type: TeachersDataActionTypes.TEACHER_SUBMIT_FEEDBACK

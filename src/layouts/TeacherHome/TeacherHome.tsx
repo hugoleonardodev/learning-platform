@@ -72,7 +72,6 @@ const TeacherHome: React.FC = () => {
                     <TeacherStatus />
                 </TeacherHomeCol>
             </TeacherHomeRow>
-            {/* <TeacherHomeFooter>&copy; Time To Play</TeacherHomeFooter> */}
         </TeacherHomeContainer>
     )
 }

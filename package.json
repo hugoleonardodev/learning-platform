@@ -1,14 +1,14 @@
 {
-  "name": "time-to-play-platform",
+  "name": "learning-platform",
   "private": true,
-  "author": "OpenFlowLabs",
+  "author": "Hugo Leonardo",
   "version": "1.0.0",
-  "description": "Time To Play Platform",
+  "description": "Learning Platform",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:openflowlabs/frontend-pocs/sphinx-frontend-boilerplate"
+    "url": "git@github.com:hugoleonardodev/learning-platform.git"
   },
-  "homepage": "https://gitlab.com/openflowlabs/frontend-pocs/sphinx-frontend-boilerplate",
+  "homepage": "https://github.com/hugoleonardodev/learning-platform",
   "contributors": [
     {
       "name": "Hugo Leonardo Matosinhos de Souza",
@@ -17,8 +17,8 @@
     }
   ],
   "bugs": {
-    "url": "https://gitlab.com/openflowlabs/frontend-pocs/sphinx-frontend-boilerplate/-/issues",
-    "email": "hugo.leonardo@sphinx.net.br"
+    "url": "https://github.com/hugoleonardodev/learning-platform/-/issues",
+    "email": "hugoleonardo.dev@gmail.com"
   },
   "main": "index.tsx",
   "scripts": {
@@ -38,9 +38,18 @@
     }
   },
   "keywords": [
-    "TimeToPlay",
+    "Learning",
     "Platform",
-    "Front-End"
+    "Front-End",
+    "React",
+    "TypeScript",
+    "Webpack",
+    "Babel",
+    "Bootstrap",
+    "Axios",
+    "Redux",
+    "redux-thunk",
+    "Styled-Components"
   ],
   "dependencies": {
     "@hookform/devtools": "^4.0.1",

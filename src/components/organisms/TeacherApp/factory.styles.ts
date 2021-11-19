@@ -101,14 +101,21 @@ type MainSectionProperties = {
 export const MainSection = styled.section<MainSectionProperties>`
     height: 100vh;
     margin-left: 104px;
-    transition: min-width 0.6s ease;
     background: ${properties => properties.theme.colors.background.light};
     width: 100%;
-
     @media only screen and (max-width: 769px) {
         margin-left: 8px;
         padding-right: 8px;
         width: 96%;
-        overflow: scroll;
+        height: calc(100vh);
+    }
+    @media only screen and (max-width: 541px) {
+        height: calc(100vh + 40vh);
+    }
+    @media only screen and (max-width: 415px) {
+        height: calc(100vh + 60vh);
+    }
+    @media only screen and (max-width: 361px) {
+        height: calc(100vh + 70vh);
     }
 `

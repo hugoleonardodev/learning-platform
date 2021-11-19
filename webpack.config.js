@@ -97,43 +97,6 @@ const config = function (environment, arguments_) {
                 {
                     test: /\.scss$/,
                     use: [
-                        // {
-                        //     loader: 'file-loader',
-                        //     options: {
-                        //         name: 'bundle.css',
-                        //     },
-                        // },
-                        // {
-                        //     loader: 'style-loader', // inject CSS to page
-                        // },
-                        // {
-                        //     loader: 'css-loader', // translates CSS into CommonJS modules
-                        // },
-                        // {
-                        //     loader: 'postcss-loader', // Run post css actions
-                        //     options: {
-                        //         // plugins: function () {
-                        //         //     // post css plugins, can be exported to postcss.config.js
-                        //         //     return [require('precss'), require('autoprefixer')]
-                        //         // },
-                        //         postcssOptions: {
-                        //             plugins: [autoprefixer()],
-                        //         },
-                        //     },
-                        // },
-                        // {
-                        //     loader: 'sass-loader', // compiles Sass to CSS
-                        //     options: {
-                        //         // Prefer Dart Sass
-                        //         implementation: require('sass'),
-
-                        //         // See https://github.com/webpack-contrib/sass-loader/issues/804
-                        //         webpackImporter: false,
-                        //         sassOptions: {
-                        //             includePaths: ['./node_modules'],
-                        //         },
-                        //     },
-                        // },
                         {
                             // inject CSS to page
                             loader: 'style-loader',

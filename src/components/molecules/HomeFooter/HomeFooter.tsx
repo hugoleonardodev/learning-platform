@@ -17,12 +17,12 @@ import EmailIcon from 'common/assets/email.svg'
 const HomeFooter: React.FC = () => {
     return (
         <HomeFooterContainer>
-            <HomeFooterTitle>&copy; Time To Play</HomeFooterTitle>
+            <HomeFooterTitle>&copy; hugoleonardodev</HomeFooterTitle>
             <HomeFooterNav>
                 <HomeFooterList>
                     <HomeFooterListItem>
                         <HomeFooterNavLink
-                            href="https://www.linkedin.com/in/time-to-play-school-2a7877164/"
+                            href="https://www.linkedin.com/in/hugo-leonardo-matosinhos-de-souza/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -31,7 +31,7 @@ const HomeFooter: React.FC = () => {
                     </HomeFooterListItem>
                     <HomeFooterListItem>
                         <HomeFooterNavLink
-                            href="mailto:contato@timetoplay.com"
+                            href="mailto:hugoleonardo.dev@gmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

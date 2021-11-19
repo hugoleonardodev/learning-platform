@@ -47,7 +47,7 @@ const MenuBar: React.FC<EditorContentProps> = ({ editor }) => {
 const TeacherFeedback: React.FC = () => {
     const editor = useEditor({
         extensions: [StarterKit],
-        content: '<p>Olá Time To Play,</p>',
+        content: '<p>Olá Learning Platform,</p>',
     })
 
     const [isSubmitDisabled, setIsSubmitDisabled] = React.useState(true)

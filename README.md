@@ -1,4 +1,4 @@
-# 🖥 Time To Play Platform Front-End
+# 🖥 Learning Platform Front-End
 
 A frontend-boilerplate to make easy to start new Sphinx projects. Configured with TypesScript, React, Webpack, Babel,
 SASS, Axios, React Router DOM, ES Lint, Stylelint, Jest, Testing Library, Cypress, Git and, Husky.
@@ -756,10 +756,6 @@ For components, layouts, and pages
 -   To avoid having unlinted code in our repository, what we can do is add ESLint at one point of our process using Git Hooks. Like Husky!
 
 ### Why Redux not Context API ???
-
-### Why we have some `.js` files on folders like pages and services ???
-
-### Why Material Design with CDN ???
 
 ### What is the folder `common/` for ???
 

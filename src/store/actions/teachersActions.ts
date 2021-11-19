@@ -142,10 +142,10 @@ export const teacherIsAproved = (isAproved: boolean): TeacherIsAproved => ({
  * @param feedback
  * @returns an object with `type` and `payload` to `dispatch` redux store's teacher is aproved status action
  * @example
- * teacherSubmitFeedback("<p>Olá Time To Play, ótima aula!</p>") =>
+ * teacherSubmitFeedback("<p>Olá Learning Platform, ótima aula!</p>") =>
  * ({
  *   type: "TEACHER_SUBMIT_FEEDBACK",
- *   payload: "<p>Olá Time To Play, ótima aula!</p>"
+ *   payload: "<p>Olá Learning Platform, ótima aula!</p>"
  * })
  */
 export const teacherSubmitFeedback = (feedback: string): TeacherSubmitFeedback => ({

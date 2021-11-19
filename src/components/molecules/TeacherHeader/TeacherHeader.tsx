@@ -27,7 +27,7 @@ import { ReactComponent as NotificationsIcon } from 'common/assets/notifications
 import { ReactComponent as FullScreenIcon } from 'common/assets/full_screen.svg'
 import { ReactComponent as PersonIcon } from 'common/assets/person.svg'
 
-import TimeToPlayLogo from 'common/assets/time-to-play-logo.jpg'
+import LearningLogo from 'common/assets/learning_logo.png'
 import { fixedUrl, toggleFullScreen } from 'common/functions'
 
 import ToggleSwitch from 'components/atoms/ToggleSwitch'
@@ -51,8 +51,8 @@ const TeacherHeader: React.FC<TeacherHeaderProperties> = ({ toggleSideMenu, side
                     <HamburgerIcon id="hamburger-icon" />
                 </TeacherNavLink>
                 <TeacherNavBrand to="/teacher-app" className="navbar-brand">
-                    <TeacherNavBrandLogo src={TimeToPlayLogo} alt="Time To Play" />
-                    TIME TO PLAY
+                    <TeacherNavBrandLogo src={LearningLogo} alt="learning-platform" />
+                    LEARNING PLATFORM
                 </TeacherNavBrand>
                 <TeacherNavLink istoggle="true" isactive={isOpen.toString()} onClick={() => setIsOpen(!isOpen)}>
                     <ExpandMoreIcon id="expand-more-icon" />

@@ -28,9 +28,7 @@ const LessonsInstructions: React.FC = () => {
             <LessonsInstructionsWelcome>
                 <LessonsInstructionsWelcomeText>Olá, Professor {teacherEmail}.</LessonsInstructionsWelcomeText>
                 <br />
-                <LessonsInstructionsWelcomeText>
-                    Seja bem vindo a plataforma Time To Play.
-                </LessonsInstructionsWelcomeText>
+                <LessonsInstructionsWelcomeText>Seja bem vindo a plataforma de ensino.</LessonsInstructionsWelcomeText>
             </LessonsInstructionsWelcome>
             <LessonsInstructionsHeading>Informações sobre o treinamento:</LessonsInstructionsHeading>
             <LessonsInstructionsList>

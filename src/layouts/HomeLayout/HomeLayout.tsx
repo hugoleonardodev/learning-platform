@@ -19,11 +19,11 @@ import {
 } from './factory.styles'
 
 import StudyingOnlineAvif from 'common/assets/studying_online.avif'
-import TimeToPlayLogoAvif from 'common/assets/time-to-play-logo.avif'
+import LearningPlatformLogoAvif from 'common/assets/learning_logo.avif'
 import StudyingOnlineWebp from 'common/assets/studying_online.webp'
-import TimeToPlayLogoWebp from 'common/assets/time-to-play-logo.webp'
+import LearningPlatformLogoWebp from 'common/assets/learning_logo.webp'
 import StudyingOnlineJpg from 'common/assets/studying_online.jpg'
-import TimeToPlayLogoJpg from 'common/assets/time-to-play-logo.jpg'
+import LearningPlatformLogoJpg from 'common/assets/learning_logo.png'
 
 import HomeFooter from 'components/molecules/HomeFooter'
 import FormLogin from 'components/organisms/FormLogin'
@@ -37,7 +37,7 @@ const HomeLayout: React.FC = () => {
                 <source srcSet={StudyingOnlineAvif} type="image/avif" />
                 <source srcSet={StudyingOnlineWebp} type="image/webp" />
                 <HomeBackground
-                    src={TimeToPlayLogoJpg}
+                    src={LearningPlatformLogoJpg}
                     alt="Studying Background"
                     width="1254"
                     height="836"
@@ -50,7 +50,7 @@ const HomeLayout: React.FC = () => {
                     <HomeRow xs="1">
                         <HomeCol>
                             <HomeCardTextContainer>
-                                <HomeCardTitle>TIME TO PLAY</HomeCardTitle>
+                                <HomeCardTitle>LEARNING PLATFORM</HomeCardTitle>
                                 <HomeCardSubTitle>A MELHOR METODOLOGIA DO BRASIL</HomeCardSubTitle>
                             </HomeCardTextContainer>
                             <HomeFormPictureContainer>
@@ -73,10 +73,10 @@ const HomeLayout: React.FC = () => {
                         <HomeCol>
                             <HomeLogoContainer>
                                 <picture>
-                                    <source srcSet={TimeToPlayLogoAvif} type="image/avif" />
-                                    <source srcSet={TimeToPlayLogoWebp} type="image/webp" />
+                                    <source srcSet={LearningPlatformLogoAvif} type="image/avif" />
+                                    <source srcSet={LearningPlatformLogoWebp} type="image/webp" />
                                     <HomeLogo
-                                        src={TimeToPlayLogoJpg}
+                                        src={LearningPlatformLogoJpg}
                                         alt="Studying Online"
                                         width="72"
                                         height="72"
@@ -84,7 +84,7 @@ const HomeLayout: React.FC = () => {
                                         loading="lazy"
                                     />
                                 </picture>
-                                <HomeLogoTitle>TIME TO PLAY</HomeLogoTitle>
+                                <HomeLogoTitle>LEARNING PLATFORM</HomeLogoTitle>
                             </HomeLogoContainer>
                             {forgotPassword ? (
                                 <ForgotPassword setForgotPassword={setForgotPassword} />

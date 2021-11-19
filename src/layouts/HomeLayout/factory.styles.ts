@@ -12,6 +12,9 @@ export const HomePictureContainer = styled.picture`
     height: 100%;
     width: 100%;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const HomeFormPictureContainer = styled.picture`
@@ -99,7 +102,7 @@ export const HomeCardSubTitle = styled.h3`
 `
 
 export const HomeCardGroup = styled(CardGroup)`
-    max-width: 80vw;
+    max-width: 50vw;
     color: ${properties => properties.theme.colors.text};
     background: ${properties => properties.theme.colors.background.light};
 `
